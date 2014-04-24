@@ -1,5 +1,5 @@
 //
-//  KSAppDelegate.h
+//  KSAccountViewController.h
 //  Autolancer
 //
 //  Created by mac-214 on 24.04.14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KSAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (retain, nonatomic) UIWindow *window;
+@interface KSAccountViewController : UIViewController
 
 @end
