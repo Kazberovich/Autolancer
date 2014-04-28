@@ -88,10 +88,12 @@
     return 1;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    KSDetailsViewController *viewController = [[KSDetailsViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    KSDetailsViewController *detailsViewController = [[UIStoryboard  storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"details"];
+    detailsViewController.tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
 

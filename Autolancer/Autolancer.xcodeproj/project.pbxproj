@@ -31,6 +31,7 @@
 		FB15A53D1909575B00C307DD /* NetworkStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A5391909575B00C307DD /* NetworkStatusHelper.m */; };
 		FB15A541190957A700C307DD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A540190957A700C307DD /* Reachability.m */; };
 		FB15A54519095A6A00C307DD /* KSTender.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A54419095A6A00C307DD /* KSTender.m */; };
+		FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FB15A540190957A700C307DD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		FB15A54319095A6A00C307DD /* KSTender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTender.h; path = Models/KSTender.h; sourceTree = "<group>"; };
 		FB15A54419095A6A00C307DD /* KSTender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTender.m; path = Models/KSTender.m; sourceTree = "<group>"; };
+		FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = no_image_ucoz_web.jpg; path = imgs/no_image_ucoz_web.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
