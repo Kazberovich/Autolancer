@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KSTendersViewController : UIViewController
+@interface KSTendersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UITableViewCell *tenderCell;
 
 @end

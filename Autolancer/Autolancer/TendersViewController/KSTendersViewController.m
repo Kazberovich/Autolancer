@@ -9,28 +9,34 @@
 #import "KSTendersViewController.h"
 #import "ApiLoadService.h"
 #import "KSTender.h"
+#import "KSTenderCell.h"
+#import "KSDetailsViewController.h"
 
 @interface KSTendersViewController ()
+
+@property (nonatomic, retain) NSMutableArray *tendersArray;
 
 @end
 
 @implementation KSTendersViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize tendersArray = _tendersArray;
+@synthesize tableView = _tableView;
+
+- (void) dealloc
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
+    [_tendersArray release];
+    [_tableView release];
+    [super dealloc];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr&page=2&user_id=3&categories=1:2"] callback:^(NSDictionary *dictionary, NSURL *url) {
+    [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr"] callback:^(NSDictionary *dictionary, NSURL *url) {
         
         NSLog(@"%@" , dictionary);
-        NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+        _tendersArray = [[[NSMutableArray alloc] init] autorelease];
         
         NSDictionary *dataDict = [dictionary objectForKey:@"data"];
         NSDictionary *tenders = [dataDict objectForKey:@"tenders"];
@@ -38,18 +44,55 @@
         {
             KSTender *newTender = [[[KSTender alloc] init] autorelease];
             [newTender initWithServerResponse:tender];
-            [array addObject:newTender];
+            [_tendersArray addObject:newTender];
         }
         
+        [_tendersArray retain];
+        [_tableView reloadData];
         NSLog(@"sds");
     }];
     
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [_tendersArray count];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    static NSString *identifier = @"KSTenderCell";
+    
+    KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
+    
+    cell.titleLabel.text = tender.title;
+    cell.carmarkLabel.text = tender.carmark;
+    cell.carmodelLabel.text = tender.carmodel;
+    cell.caryearLabel.text = tender.carYear;
+    cell.typeLabel.text = tender.type;
+    cell.actualityLabel.text = [tender.status isEqualToString:@"1"] ? @"Не актуально" : @"Актуально";
+    cell.postDateLabel.text = tender.postDate;
+    cell.placeLabel.text = tender.place;
+    cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
+    [cell.viewOfferLabel sizeToFit];
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    KSDetailsViewController *viewController = [[KSDetailsViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 
 @end

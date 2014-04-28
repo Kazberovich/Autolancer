@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F22190D253500E13870 /* KSTenderCell.m */; };
+		CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */; };
 		FB15A4BE1909149000C307DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BD1909149000C307DD /* Foundation.framework */; };
 		FB15A4C01909149000C307DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BF1909149000C307DD /* CoreGraphics.framework */; };
 		FB15A4C21909149000C307DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4C11909149000C307DD /* UIKit.framework */; };
@@ -21,8 +23,6 @@
 		FB15A4DF1909149000C307DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4C11909149000C307DD /* UIKit.framework */; };
 		FB15A4E71909149000C307DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB15A4E51909149000C307DD /* InfoPlist.strings */; };
 		FB15A4E91909149000C307DD /* AutolancerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A4E81909149000C307DD /* AutolancerTests.m */; };
-		FB15A5251909535300C307DD /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB15A5231909535300C307DD /* add2.png */; };
-		FB15A5261909535300C307DD /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FB15A5241909535300C307DD /* plus.png */; };
 		FB15A52C1909546300C307DD /* KSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A52B1909546300C307DD /* KSAccountViewController.m */; };
 		FB15A52F1909548D00C307DD /* KSNewTenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A52E1909548D00C307DD /* KSNewTenderViewController.m */; };
 		FB15A532190954BE00C307DD /* KSTendersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A531190954BE00C307DD /* KSTendersViewController.m */; };
@@ -44,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3A1F21190D253500E13870 /* KSTenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTenderCell.h; path = TendersViewController/KSTenderCell.h; sourceTree = "<group>"; };
+		CE3A1F22190D253500E13870 /* KSTenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTenderCell.m; path = TendersViewController/KSTenderCell.m; sourceTree = "<group>"; };
+		CE3A1F28190D73EC00E13870 /* KSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSDetailsViewController.h; path = DetailsViewController/KSDetailsViewController.h; sourceTree = "<group>"; };
+		CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSDetailsViewController.m; path = DetailsViewController/KSDetailsViewController.m; sourceTree = "<group>"; };
 		FB15A4BA1909149000C307DD /* Autolancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB15A4BD1909149000C307DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB15A4BF1909149000C307DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,8 +67,6 @@
 		FB15A4E41909149000C307DD /* AutolancerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutolancerTests-Info.plist"; sourceTree = "<group>"; };
 		FB15A4E61909149000C307DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB15A4E81909149000C307DD /* AutolancerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutolancerTests.m; sourceTree = "<group>"; };
-		FB15A5231909535300C307DD /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add2.png; path = ../../icons/add2.png; sourceTree = "<group>"; };
-		FB15A5241909535300C307DD /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plus.png; path = ../../icons/plus.png; sourceTree = "<group>"; };
 		FB15A52A1909546300C307DD /* KSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSAccountViewController.h; path = AccountViewController/KSAccountViewController.h; sourceTree = "<group>"; };
 		FB15A52B1909546300C307DD /* KSAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSAccountViewController.m; path = AccountViewController/KSAccountViewController.m; sourceTree = "<group>"; };
 		FB15A52D1909548D00C307DD /* KSNewTenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSNewTenderViewController.h; path = NewTenderViewController/KSNewTenderViewController.h; sourceTree = "<group>"; };
@@ -108,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE3A1F24190D5BEE00E13870 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE3A1F28190D73EC00E13870 /* KSDetailsViewController.h */,
+				CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */,
+			);
+			name = DetailsViewController;
+			sourceTree = "<group>";
+		};
 		FB15A4B11909149000C307DD = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +162,7 @@
 				FB15A5291909540E00C307DD /* AccountViewController */,
 				FB15A528190953F600C307DD /* NewTenderViewController */,
 				FB15A527190953DD00C307DD /* TendersViewController */,
+				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB15A54219095A3100C307DD /* Models */,
 				FB15A5331909570C00C307DD /* API */,
 				FB15A4D51909149000C307DD /* Images.xcassets */,
@@ -192,8 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				FB15A5221909533C00C307DD /* icons */,
-				FB15A5231909535300C307DD /* add2.png */,
-				FB15A5241909535300C307DD /* plus.png */,
 			);
 			name = resourses;
 			sourceTree = "<group>";
@@ -210,6 +220,8 @@
 			children = (
 				FB15A530190954BE00C307DD /* KSTendersViewController.h */,
 				FB15A531190954BE00C307DD /* KSTendersViewController.m */,
+				CE3A1F21190D253500E13870 /* KSTenderCell.h */,
+				CE3A1F22190D253500E13870 /* KSTenderCell.m */,
 			);
 			name = TendersViewController;
 			sourceTree = "<group>";
@@ -342,9 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
-				FB15A5261909535300C307DD /* plus.png in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
-				FB15A5251909535300C307DD /* add2.png in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,9 +379,11 @@
 				FB15A4CE1909149000C307DD /* KSAppDelegate.m in Sources */,
 				FB15A53D1909575B00C307DD /* NetworkStatusHelper.m in Sources */,
 				FB15A541190957A700C307DD /* Reachability.m in Sources */,
+				CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */,
 				FB15A53C1909575B00C307DD /* DownloadHelper.m in Sources */,
 				FB15A52C1909546300C307DD /* KSAccountViewController.m in Sources */,
 				FB15A54519095A6A00C307DD /* KSTender.m in Sources */,
+				CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */,
 				FB15A52F1909548D00C307DD /* KSNewTenderViewController.m in Sources */,
 				FB15A532190954BE00C307DD /* KSTendersViewController.m in Sources */,
 				FB15A4CA1909149000C307DD /* main.m in Sources */,

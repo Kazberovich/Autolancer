@@ -17,12 +17,12 @@
     {
         self.ID = [responseObject objectForKey:@"id"];
         self.title = [responseObject objectForKey:@"title"];
-        self.status = [responseObject objectForKey:@"tender_status"];
+        self.status = [[responseObject objectForKey:@"tender_status"] stringValue];
         self.carmark = [responseObject objectForKey:@"carmark"];
         self.carmodel = [responseObject objectForKey:@"carmodel"];
         self.carYear = [responseObject objectForKey:@"caryear"];
         self.place = [responseObject objectForKey:@"place"];
-        self.type = [responseObject objectForKey:@"type"];
+        self.type = [responseObject objectForKey:@"tender_type"];
         self.description = [responseObject objectForKey:@"description"];
         self.views = [responseObject objectForKey:@"views"];
         self.offers = [responseObject objectForKey:@"offers"];
