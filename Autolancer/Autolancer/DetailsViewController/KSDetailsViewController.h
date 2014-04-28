@@ -27,4 +27,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *tenderPostdate;
 @property (nonatomic, retain) IBOutlet UILabel *tenderPlace;
 
+- (IBAction)takeOffer:(id)sender;
+
+
 @end

@@ -32,6 +32,15 @@
 		FB15A541190957A700C307DD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A540190957A700C307DD /* Reachability.m */; };
 		FB15A54519095A6A00C307DD /* KSTender.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A54419095A6A00C307DD /* KSTender.m */; };
 		FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */; };
+		FBA01591190EA7DD00C2CA63 /* KSOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA01590190EA7DD00C2CA63 /* KSOfferViewController.m */; };
+		FBA0159A190EB25500C2CA63 /* clock_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01592190EB25500C2CA63 /* clock_green.png */; };
+		FBA0159B190EB25500C2CA63 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01593190EB25500C2CA63 /* email.png */; };
+		FBA0159C190EB25500C2CA63 /* mobile_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01594190EB25500C2CA63 /* mobile_phone.png */; };
+		FBA0159D190EB25500C2CA63 /* money_dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01595190EB25500C2CA63 /* money_dollar.png */; };
+		FBA0159E190EB25500C2CA63 /* skype.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01596190EB25500C2CA63 /* skype.png */; };
+		FBA0159F190EB25500C2CA63 /* street_view.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01597190EB25500C2CA63 /* street_view.png */; };
+		FBA015A0190EB25500C2CA63 /* telephone_64.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01598190EB25500C2CA63 /* telephone_64.png */; };
+		FBA015A1190EB25500C2CA63 /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01599190EB25500C2CA63 /* web.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +95,16 @@
 		FB15A54319095A6A00C307DD /* KSTender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTender.h; path = Models/KSTender.h; sourceTree = "<group>"; };
 		FB15A54419095A6A00C307DD /* KSTender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTender.m; path = Models/KSTender.m; sourceTree = "<group>"; };
 		FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = no_image_ucoz_web.jpg; path = imgs/no_image_ucoz_web.jpg; sourceTree = "<group>"; };
+		FBA0158F190EA7DD00C2CA63 /* KSOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSOfferViewController.h; path = OfferViewController/KSOfferViewController.h; sourceTree = "<group>"; };
+		FBA01590190EA7DD00C2CA63 /* KSOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSOfferViewController.m; path = OfferViewController/KSOfferViewController.m; sourceTree = "<group>"; };
+		FBA01592190EB25500C2CA63 /* clock_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock_green.png; path = imgs/clock_green.png; sourceTree = "<group>"; };
+		FBA01593190EB25500C2CA63 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = imgs/email.png; sourceTree = "<group>"; };
+		FBA01594190EB25500C2CA63 /* mobile_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mobile_phone.png; path = imgs/mobile_phone.png; sourceTree = "<group>"; };
+		FBA01595190EB25500C2CA63 /* money_dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = money_dollar.png; path = imgs/money_dollar.png; sourceTree = "<group>"; };
+		FBA01596190EB25500C2CA63 /* skype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skype.png; path = imgs/skype.png; sourceTree = "<group>"; };
+		FBA01597190EB25500C2CA63 /* street_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = street_view.png; path = imgs/street_view.png; sourceTree = "<group>"; };
+		FBA01598190EB25500C2CA63 /* telephone_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telephone_64.png; path = imgs/telephone_64.png; sourceTree = "<group>"; };
+		FBA01599190EB25500C2CA63 /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = web.png; path = imgs/web.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +182,7 @@
 				FB15A4D31909149000C307DD /* KSViewController.m */,
 				FB15A5291909540E00C307DD /* AccountViewController */,
 				FB15A528190953F600C307DD /* NewTenderViewController */,
+				FBA0158E190EA74900C2CA63 /* OfferViewController */,
 				FB15A527190953DD00C307DD /* TendersViewController */,
 				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB15A54219095A3100C307DD /* Models */,
@@ -213,6 +233,14 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FBA01592190EB25500C2CA63 /* clock_green.png */,
+				FBA01593190EB25500C2CA63 /* email.png */,
+				FBA01594190EB25500C2CA63 /* mobile_phone.png */,
+				FBA01595190EB25500C2CA63 /* money_dollar.png */,
+				FBA01596190EB25500C2CA63 /* skype.png */,
+				FBA01597190EB25500C2CA63 /* street_view.png */,
+				FBA01598190EB25500C2CA63 /* telephone_64.png */,
+				FBA01599190EB25500C2CA63 /* web.png */,
 				FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */,
 			);
 			name = icons;
@@ -277,6 +305,15 @@
 				FB15A54419095A6A00C307DD /* KSTender.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FBA0158E190EA74900C2CA63 /* OfferViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBA0158F190EA7DD00C2CA63 /* KSOfferViewController.h */,
+				FBA01590190EA7DD00C2CA63 /* KSOfferViewController.m */,
+			);
+			name = OfferViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,7 +393,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA015A1190EB25500C2CA63 /* web.png in Resources */,
+				FBA0159D190EB25500C2CA63 /* money_dollar.png in Resources */,
+				FBA0159F190EB25500C2CA63 /* street_view.png in Resources */,
+				FBA0159E190EB25500C2CA63 /* skype.png in Resources */,
 				FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */,
+				FBA015A0190EB25500C2CA63 /* telephone_64.png in Resources */,
+				FBA0159C190EB25500C2CA63 /* mobile_phone.png in Resources */,
+				FBA0159A190EB25500C2CA63 /* clock_green.png in Resources */,
+				FBA0159B190EB25500C2CA63 /* email.png in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
@@ -391,6 +436,7 @@
 				FB15A52F1909548D00C307DD /* KSNewTenderViewController.m in Sources */,
 				FB15A532190954BE00C307DD /* KSTendersViewController.m in Sources */,
 				FB15A4CA1909149000C307DD /* main.m in Sources */,
+				FBA01591190EA7DD00C2CA63 /* KSOfferViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

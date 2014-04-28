@@ -9,6 +9,7 @@
 #import "KSDetailsViewController.h"
 #import "KSTender.h"
 #import "ApiLoadService.h"
+#import "KSOfferViewController.h"
 
 @interface KSDetailsViewController ()
 
@@ -50,7 +51,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+   self.navigationItem.title = @"Подробная информация";
+    
 	_tenderTitle.text = _tender.title;
     _tenderCarMark.text = _tender.carmark;
     _tenderCarmodel.text = _tender.carmodel;
@@ -84,4 +86,10 @@
     }];
 }
 
+- (IBAction)takeOffer:(id)sender
+{
+    KSOfferViewController *detailsViewController = [[UIStoryboard  storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"offer"];
+    //detailsViewController.tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailsViewController animated:YES];
+}
 @end
