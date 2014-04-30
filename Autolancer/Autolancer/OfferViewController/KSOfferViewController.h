@@ -12,5 +12,15 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *offerDescription;
 @property (nonatomic, retain) IBOutlet UITextField *offerPrice;
+@property (nonatomic, retain) IBOutlet UITextField *offerMobilePhone;
+@property (nonatomic, retain) IBOutlet UITextField *offerAdditionalPhone;
+@property (nonatomic, retain) IBOutlet UITextField *offerSkype;
+@property (nonatomic, retain) IBOutlet UITextField *offerWebsite;
+@property (nonatomic, retain) IBOutlet UITextField *offerAddress;
+@property (nonatomic, retain) IBOutlet UITextField *offerWorkTime;
+@property (nonatomic, retain) IBOutlet UITextField *offerUserName;
+@property (nonatomic, retain) IBOutlet UITextField *offerEmail;
+
+- (IBAction)completeOffer:(id)sender;
 
 @end

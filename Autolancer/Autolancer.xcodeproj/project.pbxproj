@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F22190D253500E13870 /* KSTenderCell.m */; };
 		CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */; };
+		CE6B1EDA190FF9DB003EA97A /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6B1ED9190FF9DB003EA97A /* user.png */; };
 		FB15A4BE1909149000C307DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BD1909149000C307DD /* Foundation.framework */; };
 		FB15A4C01909149000C307DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BF1909149000C307DD /* CoreGraphics.framework */; };
 		FB15A4C21909149000C307DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4C11909149000C307DD /* UIKit.framework */; };
@@ -58,6 +59,7 @@
 		CE3A1F22190D253500E13870 /* KSTenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTenderCell.m; path = TendersViewController/KSTenderCell.m; sourceTree = "<group>"; };
 		CE3A1F28190D73EC00E13870 /* KSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSDetailsViewController.h; path = DetailsViewController/KSDetailsViewController.h; sourceTree = "<group>"; };
 		CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSDetailsViewController.m; path = DetailsViewController/KSDetailsViewController.m; sourceTree = "<group>"; };
+		CE6B1ED9190FF9DB003EA97A /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = imgs/user.png; sourceTree = "<group>"; };
 		FB15A4BA1909149000C307DD /* Autolancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB15A4BD1909149000C307DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB15A4BF1909149000C307DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +142,13 @@
 			name = DetailsViewController;
 			sourceTree = "<group>";
 		};
+		CE6B1ED8190FE965003EA97A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		FB15A4B11909149000C307DD = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +195,7 @@
 				FB15A527190953DD00C307DD /* TendersViewController */,
 				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB15A54219095A3100C307DD /* Models */,
+				CE6B1ED8190FE965003EA97A /* Helpers */,
 				FB15A5331909570C00C307DD /* API */,
 				FB15A4D51909149000C307DD /* Images.xcassets */,
 				FB15A4C41909149000C307DD /* Supporting Files */,
@@ -233,6 +243,7 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				CE6B1ED9190FF9DB003EA97A /* user.png */,
 				FBA01592190EB25500C2CA63 /* clock_green.png */,
 				FBA01593190EB25500C2CA63 /* email.png */,
 				FBA01594190EB25500C2CA63 /* mobile_phone.png */,
@@ -404,6 +415,7 @@
 				FBA0159B190EB25500C2CA63 /* email.png in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
+				CE6B1EDA190FF9DB003EA97A /* user.png in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
