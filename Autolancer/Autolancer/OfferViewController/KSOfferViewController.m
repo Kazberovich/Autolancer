@@ -24,9 +24,17 @@
 @synthesize offerWorkTime = _offerWorkTime;
 @synthesize offerUserName = _offerUserName;
 @synthesize offerEmail = _offerEmail;
+@synthesize mainFormsView = _mainFormsView;
+@synthesize additionalFormsView = _additionalFormsView;
+@synthesize previousFormButton = _previousFormButton;
+@synthesize nextFormButton = _nextFormButton;
 
 - (void)dealloc
 {
+    [_nextFormButton release];
+    [_previousFormButton release];
+    [_mainFormsView release];
+    [_additionalFormsView release];
     [_offerEmail release];
     [_offerUserName release];
     [_offerAddress release];
@@ -45,24 +53,26 @@
     [super viewDidLoad];
 	self.navigationItem.title = @"Предложение к заказу";
     CGRect frameRect = _offerDescription.frame;
-    frameRect.size.height = 60;
+    frameRect.size.height = 100;
     _offerDescription.frame = frameRect;
+    [_additionalFormsView setHidden:YES];
+    [_previousFormButton setHidden:YES];
 }
 
 - (IBAction)completeOffer:(id)sender
 {
-  /*  // next step is to implement validateForm
-    NSString *errorMessage = [self validateForm];
-    if (errorMessage) {
-        [[[UIAlertView alloc] initWithTitle:nil message:errorMessage delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
-        return;
-    }
-    
-    //NSDictionary *formValues = @{ @"username" : _offerUserName.text,
-    //                              @"email" : _offer.text,
-     //                             @"phone" : self.passwordTextField.text};
-    // Send the form values to the server here.
-   */
+    [_nextFormButton setHidden:YES];
+    [_previousFormButton setHidden:NO];
+    [_mainFormsView setHidden:YES];
+    [_additionalFormsView setHidden:NO];
+}
+
+- (IBAction)goToPreviousForm:(id)sender
+{
+    [_nextFormButton setHidden:NO];
+    [_previousFormButton setHidden:YES];
+    [_additionalFormsView setHidden:YES];
+    [_mainFormsView setHidden:NO];
 }
 
 - (NSString *)validateForm {

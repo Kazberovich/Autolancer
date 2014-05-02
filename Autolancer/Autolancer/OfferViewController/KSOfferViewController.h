@@ -20,7 +20,12 @@
 @property (nonatomic, retain) IBOutlet UITextField *offerWorkTime;
 @property (nonatomic, retain) IBOutlet UITextField *offerUserName;
 @property (nonatomic, retain) IBOutlet UITextField *offerEmail;
+@property (nonatomic, retain) IBOutlet UIView *mainFormsView;
+@property (nonatomic, retain) IBOutlet UIView *additionalFormsView;
+@property (nonatomic, retain) IBOutlet UIButton *previousFormButton;
+@property (nonatomic, retain) IBOutlet UIButton *nextFormButton;
 
 - (IBAction)completeOffer:(id)sender;
+- (IBAction)goToPreviousForm:(id)sender;
 
 @end
