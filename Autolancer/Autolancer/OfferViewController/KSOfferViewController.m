@@ -57,6 +57,17 @@
     _offerDescription.frame = frameRect;
     [_additionalFormsView setHidden:YES];
     [_previousFormButton setHidden:YES];
+    
+    _offerEmail.textField.placeholder = @"Email";
+    [_offerEmail setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        if (text.length < 8) {
+            field.alertView.title = @"Password is too short";
+            return NO;
+        } else {
+            return YES;
+        }
+    }];
+    
 }
 
 - (IBAction)completeOffer:(id)sender
@@ -73,23 +84,6 @@
     [_previousFormButton setHidden:YES];
     [_additionalFormsView setHidden:YES];
     [_mainFormsView setHidden:NO];
-}
-
-- (NSString *)validateForm {
-    NSString *errorMessage = nil;
-    
-    NSString *regex = @"[^@]+@[A-Za-z0-9.-]+\\.[A-Za-z]+";
-    NSPredicate *emailPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    
-    if (!(_offerUserName.text.length >= 1)){
-        errorMessage = @"Please enter your name";
-    } else if (![emailPredicate evaluateWithObject:_offerEmail.text]){
-        errorMessage = @"Please enter a valid email address";
-    } else if (! (_offerPrice.text.length >= 1)){
-        errorMessage = @"Please enter a valid password";
-    }
-    
-    return errorMessage;
 }
 
 @end

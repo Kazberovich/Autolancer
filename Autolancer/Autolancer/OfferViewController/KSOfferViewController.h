@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BZGFormField/BZGFormField.h>
 
-@interface KSOfferViewController : UIViewController
+@interface KSOfferViewController : UIViewController <BZGFormFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *offerDescription;
 @property (nonatomic, retain) IBOutlet UITextField *offerPrice;
@@ -19,7 +20,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *offerAddress;
 @property (nonatomic, retain) IBOutlet UITextField *offerWorkTime;
 @property (nonatomic, retain) IBOutlet UITextField *offerUserName;
-@property (nonatomic, retain) IBOutlet UITextField *offerEmail;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerEmail;
 @property (nonatomic, retain) IBOutlet UIView *mainFormsView;
 @property (nonatomic, retain) IBOutlet UIView *additionalFormsView;
 @property (nonatomic, retain) IBOutlet UIButton *previousFormButton;
