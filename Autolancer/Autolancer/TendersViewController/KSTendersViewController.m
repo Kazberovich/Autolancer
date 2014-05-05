@@ -33,9 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Предложение к заказу";
-    
+    self.tabBarController.title = @"Объявления";
     [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr"] callback:^(NSDictionary *dictionary, NSURL *url) {
         
         NSLog(@"%@" , dictionary);
@@ -81,6 +79,7 @@
     cell.postDateLabel.text = tender.postDate;
     cell.placeLabel.text = tender.place;
     cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
+    
     [cell.viewOfferLabel sizeToFit];
     
     return cell;
@@ -98,6 +97,5 @@
     
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
-
 
 @end

@@ -29,9 +29,11 @@
 @synthesize tenderType = _tenderType;
 @synthesize tenderViews = _tenderViews;
 @synthesize tenderPlace = _tenderPlace;
+@synthesize scrollView = _scrollView;
 
 - (void) dealloc
 {
+    [_scrollView release];
     [_tender release];
     [_tenderCarMark release];
     [_tenderCarmodel release];
@@ -52,6 +54,9 @@
 {
     [super viewDidLoad];
    self.navigationItem.title = @"Подробная информация";
+    
+    [_scrollView setScrollEnabled:YES];
+    [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
 	_tenderTitle.text = _tender.title;
     _tenderCarMark.text = _tender.carmark;
@@ -88,8 +93,8 @@
 
 - (IBAction)takeOffer:(id)sender
 {
-    KSOfferViewController *detailsViewController = [[UIStoryboard  storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"offer"];
-    //detailsViewController.tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
+    KSOfferViewController *detailsViewController = [[UIStoryboard  storyboardWithName:@"Main" bundle:nil]
+                                                    instantiateViewControllerWithIdentifier:@"offer"];
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 @end

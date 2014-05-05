@@ -35,6 +35,8 @@
 		FB15A54519095A6A00C307DD /* KSTender.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A54419095A6A00C307DD /* KSTender.m */; };
 		FB3A452A1913E559006E1F97 /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A45291913E559006E1F97 /* at.png */; };
 		FB3A452C1913E664006E1F97 /* at_red.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A452B1913E664006E1F97 /* at_red.png */; };
+		FB9D2D8F1917D18700B8E7FE /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D2D8E1917D18700B8E7FE /* phone.png */; };
+		FB9D2D911917D25000B8E7FE /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D2D901917D25000B8E7FE /* map.png */; };
 		FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */; };
 		FBA01591190EA7DD00C2CA63 /* KSOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA01590190EA7DD00C2CA63 /* KSOfferViewController.m */; };
 		FBA0159A190EB25500C2CA63 /* clock_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01592190EB25500C2CA63 /* clock_green.png */; };
@@ -103,6 +105,8 @@
 		FB15A54419095A6A00C307DD /* KSTender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTender.m; path = Models/KSTender.m; sourceTree = "<group>"; };
 		FB3A45291913E559006E1F97 /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at.png; path = imgs/at.png; sourceTree = "<group>"; };
 		FB3A452B1913E664006E1F97 /* at_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at_red.png; path = imgs/at_red.png; sourceTree = "<group>"; };
+		FB9D2D8E1917D18700B8E7FE /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = imgs/phone.png; sourceTree = "<group>"; };
+		FB9D2D901917D25000B8E7FE /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = imgs/map.png; sourceTree = "<group>"; };
 		FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = no_image_ucoz_web.jpg; path = imgs/no_image_ucoz_web.jpg; sourceTree = "<group>"; };
 		FBA0158F190EA7DD00C2CA63 /* KSOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSOfferViewController.h; path = OfferViewController/KSOfferViewController.h; sourceTree = "<group>"; };
 		FBA01590190EA7DD00C2CA63 /* KSOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSOfferViewController.m; path = OfferViewController/KSOfferViewController.m; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FB9D2D901917D25000B8E7FE /* map.png */,
+				FB9D2D8E1917D18700B8E7FE /* phone.png */,
 				FB3A452B1913E664006E1F97 /* at_red.png */,
 				FB3A45291913E559006E1F97 /* at.png */,
 				CE6B1ED9190FF9DB003EA97A /* user.png */,
@@ -424,10 +430,12 @@
 				FBA0159E190EB25500C2CA63 /* skype.png in Resources */,
 				FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */,
 				FBA015A0190EB25500C2CA63 /* telephone_64.png in Resources */,
+				FB9D2D8F1917D18700B8E7FE /* phone.png in Resources */,
 				FBA0159C190EB25500C2CA63 /* mobile_phone.png in Resources */,
 				FBA0159A190EB25500C2CA63 /* clock_green.png in Resources */,
 				FB3A452A1913E559006E1F97 /* at.png in Resources */,
 				FB3A452C1913E664006E1F97 /* at_red.png in Resources */,
+				FB9D2D911917D25000B8E7FE /* map.png in Resources */,
 				FBA0159B190EB25500C2CA63 /* email.png in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
