@@ -1,10 +1,16 @@
 PODS:
   - BZGFormField (1.1.2)
+  - DropdownMenu (1.0.0)
+  - KDropDownMultipleSelection (1.0.1)
 
 DEPENDENCIES:
   - BZGFormField
+  - DropdownMenu (~> 1.0.0)
+  - KDropDownMultipleSelection
 
 SPEC CHECKSUMS:
   BZGFormField: 724478d1e795458c93ec166730386caa85752454
+  DropdownMenu: 3c454205c2db1fd39dc1ebf099114c4fdb73f136
+  KDropDownMultipleSelection: 53d8d3dd6164f8447ab1a615314682b0cf4ce635
 
 COCOAPODS: 0.32.1

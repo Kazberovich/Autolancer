@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NIDropDown.h"
 
-@interface KSAccountViewController : UIViewController
+@interface KSAccountViewController : UIViewController<NIDropDownDelegate>
+{
+    IBOutlet UIButton *btnSelect;
+    NIDropDown *dropDown;
+}
+
+@property (retain, nonatomic) IBOutlet UIButton *btnSelect;
+- (IBAction)selectClicked:(id)sender;
+
+- (void)rel;
 
 @end
