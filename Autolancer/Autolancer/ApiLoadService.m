@@ -21,29 +21,28 @@
     else
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-           if ([NetworkStatusHelper isInternetActive])
-           {
-               NSData *responseData = [NSData dataWithContentsOfURL:url];
-               if(!responseData)
-               {
-                   NSLog(@"ApiLoadService:getresponseForURL = incorrect responseData");
-                   callback(nil, url);
-               }
-               else
-               {
-                   NSError * error;
-                   NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-                   
-                   dispatch_async(dispatch_get_main_queue(), ^{
-                       callback(responseJson, url);
-                   });
-               }
-           }
-
+            if ([NetworkStatusHelper isInternetActive])
+            {
+                NSData *responseData = [NSData dataWithContentsOfURL:url];
+                if(!responseData)
+                {
+                    NSLog(@"ApiLoadService:getresponseForURL = incorrect responseData");
+                    callback(nil, url);
+                }
+                else
+                {
+                    NSError * error;
+                    NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        callback(responseJson, url);
+                    });
+                }
+            }
+            
         });
     }
 }
-
 
 + (void) actionWithWatchlist: (BOOL) addOrRemove :(NSString*) filmId  callback:(void (^)(NSDictionary *dictionary)) callback
 {

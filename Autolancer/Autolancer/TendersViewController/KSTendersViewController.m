@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabBarController.title = @"Объявления";
+
     [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr"] callback:^(NSDictionary *dictionary, NSURL *url) {
         
         NSLog(@"%@" , dictionary);
@@ -52,7 +52,11 @@
         [_tableView reloadData];
         NSLog(@"sds");
     }];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.tabBarController.title = @"Объявления";
 }
 
 #pragma mark - UITableViewDataSource

@@ -15,12 +15,14 @@
 
 @implementation KSAccountViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+
+@synthesize btnSelect;
+
+
+- (void)dealloc
+{
+    [btnSelect release];
+    [super dealloc];
 }
 
 - (void)viewDidLoad {
@@ -32,7 +34,8 @@
 }
 
 - (void)viewDidUnload {
-    //    [btnSelect release];
+    
+    [btnSelect release];
     btnSelect = nil;
     [self setBtnSelect:nil];
     [super viewDidUnload];
@@ -42,24 +45,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)dealloc {
-    //    [btnSelect release];
-    //    [super dealloc];
-}
-
 - (IBAction)selectClicked:(id)sender {
-    NSArray * arr = [[NSArray alloc] init];
+    NSArray * arr = [[[NSArray alloc] init] autorelease];
     arr = [NSArray arrayWithObjects:@"Hello 0", @"Hello 1", @"Hello 2", @"Hello 3", @"Hello 4", @"Hello 5", @"Hello 6", @"Hello 7", @"Hello 8", @"Hello 9",nil];
-    
-    NSArray * arrImage = [[NSArray alloc] init];
-    arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"apple.png"], [UIImage imageNamed:@"apple2.png"], [UIImage imageNamed:@"apple.png"], [UIImage imageNamed:@"apple2.png"], [UIImage imageNamed:@"apple.png"], [UIImage imageNamed:@"apple2.png"], [UIImage imageNamed:@"apple.png"], [UIImage imageNamed:@"apple2.png"], [UIImage imageNamed:@"apple.png"], [UIImage imageNamed:@"apple2.png"], nil];
     
     if(dropDown == nil) {
         CGFloat f = 200;
-        dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :arrImage :@"down"];
+        dropDown = [[[NIDropDown alloc]showDropDown:sender :&f :arr :nil :@"down"] autorelease];
         dropDown.delegate = self;
     }
-    else {
+    else
+    {
         [dropDown hideDropDown:sender];
         [self rel];
     }
@@ -69,8 +65,8 @@
     [self rel];
 }
 
--(void)rel{
-    //    [dropDown release];
+- (void)rel{
+    [dropDown release];
     dropDown = nil;
 }
 

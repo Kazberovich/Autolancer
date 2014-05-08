@@ -48,6 +48,7 @@
 		FBA0159F190EB25500C2CA63 /* street_view.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01597190EB25500C2CA63 /* street_view.png */; };
 		FBA015A0190EB25500C2CA63 /* telephone_64.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01598190EB25500C2CA63 /* telephone_64.png */; };
 		FBA015A1190EB25500C2CA63 /* web.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA01599190EB25500C2CA63 /* web.png */; };
+		FBBD4E4D191BBD3B00D566A5 /* KSTenderType.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBD4E4C191BBD3B00D566A5 /* KSTenderType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,8 @@
 		FBA01597190EB25500C2CA63 /* street_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = street_view.png; path = imgs/street_view.png; sourceTree = "<group>"; };
 		FBA01598190EB25500C2CA63 /* telephone_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telephone_64.png; path = imgs/telephone_64.png; sourceTree = "<group>"; };
 		FBA01599190EB25500C2CA63 /* web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = web.png; path = imgs/web.png; sourceTree = "<group>"; };
+		FBBD4E4B191BBD3B00D566A5 /* KSTenderType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTenderType.h; path = Models/KSTenderType.h; sourceTree = "<group>"; };
+		FBBD4E4C191BBD3B00D566A5 /* KSTenderType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTenderType.m; path = Models/KSTenderType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +340,8 @@
 			children = (
 				FB15A54319095A6A00C307DD /* KSTender.h */,
 				FB15A54419095A6A00C307DD /* KSTender.m */,
+				FBBD4E4B191BBD3B00D566A5 /* KSTenderType.h */,
+				FBBD4E4C191BBD3B00D566A5 /* KSTenderType.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				FB15A54519095A6A00C307DD /* KSTender.m in Sources */,
 				CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */,
 				FB15A52F1909548D00C307DD /* KSNewTenderViewController.m in Sources */,
+				FBBD4E4D191BBD3B00D566A5 /* KSTenderType.m in Sources */,
 				FB15A532190954BE00C307DD /* KSTendersViewController.m in Sources */,
 				FB15A4CA1909149000C307DD /* main.m in Sources */,
 				FBA01591190EA7DD00C2CA63 /* KSOfferViewController.m in Sources */,
