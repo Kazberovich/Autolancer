@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "NIDropDown.h"
+#import <LPPopupListView/LPPopupListView.h>
+#import <LPPopupListViewCell.h>
 
-@interface KSAccountViewController : UIViewController<NIDropDownDelegate>
-{
-    IBOutlet UIButton *btnSelect;
-    NIDropDown *dropDown;
-}
 
-@property (retain, nonatomic) IBOutlet UIButton *btnSelect;
-- (IBAction)selectClicked:(id)sender;
+@interface KSAccountViewController : UIViewController <LPPopupListViewDelegate>
 
-- (void)rel;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+
+- (IBAction)buttonClicked:(id)selector;
 
 @end

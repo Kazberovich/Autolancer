@@ -73,7 +73,7 @@
     
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
-    
+
     cell.titleLabel.text = tender.title;
     cell.carmarkLabel.text = tender.carmark;
     cell.carmodelLabel.text = tender.carmodel;

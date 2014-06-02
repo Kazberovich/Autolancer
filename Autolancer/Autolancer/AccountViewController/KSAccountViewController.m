@@ -11,63 +11,67 @@
 
 @interface KSAccountViewController ()
 
+
+@property (nonatomic, strong) NSMutableIndexSet *selectedIndexes;
+
 @end
+
 
 @implementation KSAccountViewController
 
+#pragma mark - Lifecycle
 
-@synthesize btnSelect;
-
-
-- (void)dealloc
+- (void)viewDidLoad
 {
-    [btnSelect release];
-    [super dealloc];
-}
-
-- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    btnSelect.layer.borderWidth = 1;
-    btnSelect.layer.borderColor = [[UIColor blackColor] CGColor];
-    btnSelect.layer.cornerRadius = 5;
-}
-
-- (void)viewDidUnload {
     
-    [btnSelect release];
-    btnSelect = nil;
-    [self setBtnSelect:nil];
-    [super viewDidUnload];
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *bundleName = [NSString stringWithFormat:@"%@", [info objectForKey:@"CFBundleDisplayName"]];
+    self.title = bundleName;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+#pragma mark - Button
 
-- (IBAction)selectClicked:(id)sender {
-    NSArray * arr = [[[NSArray alloc] init] autorelease];
-    arr = [NSArray arrayWithObjects:@"Hello 0", @"Hello 1", @"Hello 2", @"Hello 3", @"Hello 4", @"Hello 5", @"Hello 6", @"Hello 7", @"Hello 8", @"Hello 9",nil];
+- (IBAction)buttonClicked:(id)selector
+{
+    float paddingTopBottom = 20.0f;
+    float paddingLeftRight = 20.0f;
     
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[[NIDropDown alloc]showDropDown:sender :&f :arr :nil :@"down"] autorelease];
-        dropDown.delegate = self;
-    }
-    else
-    {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
+    CGPoint point = CGPointMake(paddingLeftRight, (self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + paddingTopBottom);
+    CGSize size = CGSizeMake((self.view.frame.size.width - (paddingLeftRight * 2)), self.view.frame.size.height - ((self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + (paddingTopBottom * 2)));
+    
+    LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"List View" list:[self list] selectedIndexes:self.selectedIndexes point:point size:size multipleSelection:YES];
+    listView.delegate = self;
+    
+    [listView showInView:self.navigationController.view animated:YES];
 }
 
-- (void) niDropDownDelegateMethod: (NIDropDown *) sender {
-    [self rel];
+#pragma mark - LPPopupListViewDelegate
+
+- (void)popupListView:(LPPopupListView *)popUpListView didSelectIndex:(NSInteger)index
+{
+    NSLog(@"popUpListView - didSelectIndex: %d", index);
 }
 
-- (void)rel{
-    [dropDown release];
-    dropDown = nil;
+- (void)popupListViewDidHide:(LPPopupListView *)popUpListView selectedIndexes:(NSIndexSet *)selectedIndexes
+{
+    NSLog(@"popupListViewDidHide - selectedIndexes: %@", selectedIndexes.description);
+    
+    self.selectedIndexes = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+    
+    self.textView.text = @"";
+    [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        self.textView.text = [self.textView.text stringByAppendingFormat:@"%@\n", [[self list] objectAtIndex:idx]];
+    }];
 }
 
+#pragma mark - Array List
+
+- (NSArray *)list
+{
+    return [NSArray arrayWithObjects:@"Car", @"Motor", @"Airplane", @"Boat", @"Bike", nil];
+}
+
+    
+   
 @end
