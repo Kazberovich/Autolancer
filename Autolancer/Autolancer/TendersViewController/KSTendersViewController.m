@@ -33,7 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr"] callback:^(NSDictionary *dictionary, NSURL *url) {
         
         NSLog(@"%@" , dictionary);
@@ -54,9 +56,20 @@
     }];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     self.tabBarController.title = @"Объявления";
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1] /*#35699e*/;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    
+    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
 }
 
 #pragma mark - UITableViewDataSource
@@ -68,21 +81,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     static NSString *identifier = @"KSTenderCell";
     
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
 
+    //cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gray.jpeg"]];
+    
+    //cell.titleLabel.backgroundColor = [UIColor colorWithRed:0.443 green:0.478 blue:0.537 alpha:1] /*#717a89*/;
+    //cell.titleLabel.textColor = [UIColor whiteColor];
     cell.titleLabel.text = tender.title;
+    
     cell.carmarkLabel.text = tender.carmark;
+    cell.carmarkLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
     cell.carmodelLabel.text = tender.carmodel;
+    cell.carmodelLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
     cell.caryearLabel.text = tender.carYear;
+    cell.caryearLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
     cell.typeLabel.text = tender.type;
-    cell.actualityLabel.text = [tender.status isEqualToString:@"1"] ? @"Не актуально" : @"Актуально";
+    cell.typeLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
+    if ([tender.status isEqualToString:@"1"])
+    {
+        cell.actualityLabel.text = @"Не актуально";
+        //cell.actualityLabel.textColor = @""
+    }
+    else
+    {
+        cell.actualityLabel.text = @"Актуально";
+    }
+    
     cell.postDateLabel.text = tender.postDate;
+    cell.postDateLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
     cell.placeLabel.text = tender.place;
+    cell.placeLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    
     cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
+    cell.viewOfferLabel.textColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
     [cell.viewOfferLabel sizeToFit];
     
