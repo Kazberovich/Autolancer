@@ -56,11 +56,6 @@
     }];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     self.tabBarController.title = @"Объявления";
@@ -87,10 +82,10 @@
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
 
-    //cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gray.jpeg"]];
+    cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1] /*#ebecee*/;//[UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
-    //cell.titleLabel.backgroundColor = [UIColor colorWithRed:0.443 green:0.478 blue:0.537 alpha:1] /*#717a89*/;
-    //cell.titleLabel.textColor = [UIColor whiteColor];
+    cell.titleLabel.backgroundColor = [UIColor colorWithRed:0.851 green:0.906 blue:0.949 alpha:1] /*#d9e7f2*/;
+   // cell.titleLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     cell.titleLabel.text = tender.title;
     
     cell.carmarkLabel.text = tender.carmark;
@@ -103,7 +98,7 @@
     cell.caryearLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     
     cell.typeLabel.text = tender.type;
-    cell.typeLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.typeLabel.textColor = [UIColor colorWithRed:0.71 green:0.435 blue:0.533 alpha:1] /*#b56f88*/;//[UIColor colorWithRed:0.141 green:0.478 blue:0.557 alpha:1] /*#247a8e*/;//[UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     
     if ([tender.status isEqualToString:@"1"])
     {
@@ -116,10 +111,10 @@
     }
     
     cell.postDateLabel.text = tender.postDate;
-    cell.postDateLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.postDateLabel.textColor = [UIColor colorWithRed:0.063 green:0.604 blue:0.702 alpha:1] /*#109ab3*/;
     
     cell.placeLabel.text = tender.place;
-    cell.placeLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.placeLabel.textColor = [UIColor colorWithRed:0.063 green:0.604 blue:0.702 alpha:1] /*#109ab3*/;
     
     cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
     cell.viewOfferLabel.textColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
