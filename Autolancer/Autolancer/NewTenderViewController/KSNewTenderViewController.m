@@ -13,84 +13,217 @@
 @interface KSNewTenderViewController ()
 
 @property (nonatomic, retain) NSMutableArray *loadedTypes;
+@property (nonatomic, retain) NSMutableIndexSet *selectedIndexes;
+@property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForCategories;
+@property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForPlaces;
+@property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForTypes;
+
+@property (assign) NSInteger currentTag;
 
 @end
 
 @implementation KSNewTenderViewController
 
+@synthesize scrollView = _scrollView;
 @synthesize selectTenderType = _selectTenderType;
-@synthesize selectCarmark = _selectCarmark;
-@synthesize selectCarModel = _selectCarModel;
-@synthesize selectCarYear = _selectCarYear;
 @synthesize selectCatrgory = _selectCatrgory;
 @synthesize selectPlace = _selectPlace;
-
-@synthesize fieldTenderType = _fieldTenderType;
-@synthesize fieldCarmark = _fieldCarmark;
-@synthesize fieldCarModel = _fieldCarModel;
-@synthesize fieldCarYear = _fieldCarYear;
-@synthesize fieldCatrgory = _fieldCatrgory;
-@synthesize fieldPlace = _fieldPlace;
-
 @synthesize loadedTypes = _loadedTypes;
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    self.tabBarController.title = @"Новый заказ";
-}
+@synthesize selectedIndexesForCategories;
+@synthesize selectedIndexesForPlaces;
+@synthesize selectedIndexesForTypes;
+@synthesize image = _image;
 
 - (void)dealloc
 {
+    selectedIndexesForCategories = nil;
+    selectedIndexesForPlaces = nil;
+    selectedIndexesForTypes = nil;
+    
+    [_image release];
+    [_scrollView release];
     [_selectTenderType release];
+    [_selectCatrgory release];
+    [_selectPlace release];
     [_loadedTypes release];
+    
     [super dealloc];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 }
 
-- (IBAction)showActionSheet:(id)sender
-{   
-    if ([sender tag] == 1)
-    {
-        [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tendertypes&uid=rrrr&user_id=3"] callback:^(NSDictionary *dictionary, NSURL *url) {
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.tabBarController.title = @"Новый заказ";
+    
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
+    
+    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(openCamera)];
+    NSArray *actionButtonItems = @[doneItem];
+    
+    self.tabBarController.navigationItem.rightBarButtonItems = actionButtonItems;
+    self.tabBarController.navigationItem.leftBarButtonItem = cameraItem;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    self.tabBarController.navigationItem.rightBarButtonItems = nil;
+    self.tabBarController.navigationItem.leftBarButtonItem = nil;
+}
+
+- (void)actionCamera
+{
+    NSLog(@"actionCamera");
+}
+
+- (void)actionDone
+{
+    NSLog(@"actionDone");
+}
+
+#pragma mark - Button
+
+- (IBAction)buttonClicked:(id)selector
+{
+    self.currentTag = [selector tag];
+    
+    float paddingTopBottom = 20.0f;
+    float paddingLeftRight = 20.0f;
+    
+    CGPoint point = CGPointMake(paddingLeftRight, (self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + paddingTopBottom);
+    CGSize size = CGSizeMake((self.view.frame.size.width - (paddingLeftRight * 2)), self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height - ((self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + (paddingTopBottom * 2)));
+    
+    NSString *listTitle = [[[NSString alloc] init] autorelease];
+    
+    switch ([selector tag]) {
+        case 0:
+        {
+            listTitle = @"Тип заказа";
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForTypes point:point size:size multipleSelection:YES];
+            listView.delegate = self;
             
-            NSDictionary *data = [dictionary objectForKey:@"data"];
-            NSDictionary *tenderTypes = [data objectForKey:@"tendertypes"];
-            NSLog(@"%@", tenderTypes);
+            [listView showInView:self.navigationController.view animated:YES];
+            break;
+        }
+        case 1:
+        {
+            listTitle = @"Категории";
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCategories point:point size:size multipleSelection:YES];
+            listView.delegate = self;
             
-            _loadedTypes = [[[NSMutableArray alloc] init] autorelease];
+            [listView showInView:self.navigationController.view animated:YES];
+            break;
+        }
+        case 2:
+        {
+            listTitle = @"Местоположение";
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
+            listView.delegate = self;
             
-            for(id type in tenderTypes)
-            {
-                KSTenderType * toaddType = [[KSTenderType alloc] initWithServerResponse:type];
-                [_loadedTypes addObject: toaddType];
-            }
-            
-            UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Это ActionSheet"
-                                                                     delegate:self
-                                                            cancelButtonTitle:nil
-                                                       destructiveButtonTitle:nil
-                                                            otherButtonTitles:nil];
-        
-            for (KSTenderType * type in _loadedTypes)
-            {
-                [actionSheet addButtonWithTitle:type.title];
-            }
-            [_loadedTypes retain];
-            [actionSheet showInView:self.view];
-            
-        }];
+            [listView showInView:self.navigationController.view animated:YES];
+            break;
+        }
+        default:
+            break;
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+#pragma mark - LPPopupListViewDelegate
+
+- (void)popupListView:(LPPopupListView *)popUpListView didSelectIndex:(NSInteger)index
 {
-    //[_loadedTypes retain];
-    _fieldTenderType.textField.text = ((KSTenderType*)[_loadedTypes objectAtIndex:buttonIndex]).title;
+    NSLog(@"popUpListView - didSelectIndex: %ld", (long)index);
 }
 
+- (void)popupListViewDidHide:(LPPopupListView *)popUpListView selectedIndexes:(NSIndexSet *)selectedIndexes
+{
+    NSLog(@"popupListViewDidHide - selectedIndexes: %@", selectedIndexes.description);
+    
+    switch (self.currentTag) {
+        case 0:
+        {
+            self.selectedIndexesForTypes = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+            
+            self.typeTextView.text = @"";
+            [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                self.typeTextView.text = [self.typeTextView.text stringByAppendingFormat:@"%@\n", [[self list:0] objectAtIndex:idx]];
+            }];
+            
+            break;
+        }
+        case 1:
+        {
+            self.selectedIndexesForCategories = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+            
+            self.categoryTextView.text = @"";
+            [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                self.categoryTextView.text = [self.categoryTextView.text stringByAppendingFormat:@"%@\n", [[self list:1] objectAtIndex:idx]];
+            }];
+            
+            break;
+        }
+            
+        case 2:
+        {
+            self.selectedIndexesForPlaces = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+            
+            self.placeTextView.text = @"";
+            [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                self.placeTextView.text = [self.placeTextView.text stringByAppendingFormat:@"%@\n", [[self list:2] objectAtIndex:idx]];
+            }];
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+            
+}
+
+#pragma mark - Array List
+
+- (NSArray *)list :(NSInteger)index
+{
+    switch (index) {
+        case 0:
+            return [NSArray arrayWithObjects:@"Услуги/работы", @"Новые", @"Б/у", nil];
+            break;
+            
+        case 1:
+            return [NSArray arrayWithObjects:@"Покраска", @"Земельные", @"Электричество", nil];
+            break;
+            
+        case 2:
+            return [NSArray arrayWithObjects:@"Минск", @"Брест", @"Гомель", nil];
+            break;
+            
+        default:
+            return [NSArray arrayWithObjects:@"Car", @"Motor", @"Airplane", @"Boat", @"Bike", nil];
+    }
+}
+
+#pragma mark - Camera
+
+- (void) openCamera
+{
+    DBCameraContainerViewController *cameraContainer = [[DBCameraContainerViewController alloc] initWithDelegate:self];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cameraContainer];
+    [nav setNavigationBarHidden:YES];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+//Use your captured image
+#pragma mark - DBCameraViewControllerDelegate
+
+- (void) captureImageDidFinish:(UIImage *)image withMetadata:(NSDictionary *)metadata
+{
+    [_image setImage:image];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

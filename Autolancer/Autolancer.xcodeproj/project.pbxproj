@@ -38,6 +38,7 @@
 		FB64E1E9194750E900BBF5F5 /* gray.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FB64E1E8194750E900BBF5F5 /* gray.jpeg */; };
 		FB6B981D19190DDF00BF2E73 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B981A19190DDF00BF2E73 /* NIDropDown.m */; };
 		FB6B981E19190DDF00BF2E73 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B981C19190DDF00BF2E73 /* Reachability.m */; };
+		FB7B01971948597900BBA1E8 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7B01961948597900BBA1E8 /* AFViewShaker.m */; };
 		FB9D2D8F1917D18700B8E7FE /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D2D8E1917D18700B8E7FE /* phone.png */; };
 		FB9D2D911917D25000B8E7FE /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D2D901917D25000B8E7FE /* map.png */; };
 		FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */; };
@@ -113,6 +114,8 @@
 		FB6B981A19190DDF00BF2E73 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIDropDown.m; path = ThrirdParty/NIDropDown.m; sourceTree = "<group>"; };
 		FB6B981B19190DDF00BF2E73 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ThrirdParty/Reachability.h; sourceTree = "<group>"; };
 		FB6B981C19190DDF00BF2E73 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ThrirdParty/Reachability.m; sourceTree = "<group>"; };
+		FB7B01951948597900BBA1E8 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFViewShaker.h; path = ThrirdParty/AFViewShaker/AFViewShaker.h; sourceTree = "<group>"; };
+		FB7B01961948597900BBA1E8 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFViewShaker.m; path = ThrirdParty/AFViewShaker/AFViewShaker.m; sourceTree = "<group>"; };
 		FB9D2D8E1917D18700B8E7FE /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = imgs/phone.png; sourceTree = "<group>"; };
 		FB9D2D901917D25000B8E7FE /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = imgs/map.png; sourceTree = "<group>"; };
 		FBA0158C190E9E9300C2CA63 /* no_image_ucoz_web.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = no_image_ucoz_web.jpg; path = imgs/no_image_ucoz_web.jpg; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 		FB15A53E1909579300C307DD /* ThrirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				FB7B01951948597900BBA1E8 /* AFViewShaker.h */,
+				FB7B01961948597900BBA1E8 /* AFViewShaker.m */,
 				FB6B981919190DDF00BF2E73 /* NIDropDown.h */,
 				FB6B981A19190DDF00BF2E73 /* NIDropDown.m */,
 				FB6B981B19190DDF00BF2E73 /* Reachability.h */,
@@ -519,6 +524,7 @@
 				FB15A53C1909575B00C307DD /* DownloadHelper.m in Sources */,
 				FB15A52C1909546300C307DD /* KSAccountViewController.m in Sources */,
 				FB15A54519095A6A00C307DD /* KSTender.m in Sources */,
+				FB7B01971948597900BBA1E8 /* AFViewShaker.m in Sources */,
 				CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */,
 				FB15A52F1909548D00C307DD /* KSNewTenderViewController.m in Sources */,
 				FBBD4E4D191BBD3B00D566A5 /* KSTenderType.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "KSAccountViewController.h"
 #import "NIDropDown.h"
+#import "AFViewShaker.h"
 
 @interface KSAccountViewController ()
 
@@ -25,6 +26,8 @@
 {
     [super viewDidLoad];
     
+    self.viewShaker = [[AFViewShaker alloc] initWithView:self.textView];
+    
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *bundleName = [NSString stringWithFormat:@"%@", [info objectForKey:@"CFBundleDisplayName"]];
     self.title = bundleName;
@@ -34,6 +37,10 @@
 
 - (IBAction)buttonClicked:(id)selector
 {
+    [self.viewShaker shakeWithDuration:0.6 completion:^{
+        NSLog(@"Hello World!");
+    }];
+    
     float paddingTopBottom = 20.0f;
     float paddingLeftRight = 20.0f;
     

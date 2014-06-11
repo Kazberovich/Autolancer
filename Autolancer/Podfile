@@ -2,5 +2,7 @@ platform :ios, '7.0'
 
 pod 'BZGFormField'
 pod 'DropdownMenu', '~> 1.0.0'
-pod 'KDropDownMultipleSelection'
 pod 'LPPopupListView', '~> 1.0.3'
+
+pod 'REFrostedViewController', '~> 2.4.5'
+pod 'DBCamera', '~> 2.1.2'

@@ -1,19 +1,22 @@
 PODS:
   - BZGFormField (1.1.2)
+  - DBCamera (2.1.2)
   - DropdownMenu (1.0.0)
-  - KDropDownMultipleSelection (1.0.1)
   - LPPopupListView (1.0.3)
+  - REFrostedViewController (2.4.5)
 
 DEPENDENCIES:
   - BZGFormField
+  - DBCamera (~> 2.1.2)
   - DropdownMenu (~> 1.0.0)
-  - KDropDownMultipleSelection
   - LPPopupListView (~> 1.0.3)
+  - REFrostedViewController (~> 2.4.5)
 
 SPEC CHECKSUMS:
   BZGFormField: c469a07c251a9fd8bd8d8fce023896b15d752a99
+  DBCamera: 202292ae99033e9e1983b39bca107b9c5bd1c1a4
   DropdownMenu: ad71a2fcb932cc04a4f7c29aadaf2e8ed0c08e42
-  KDropDownMultipleSelection: e5a2c2cfe5d747ce1fe1c9969625f9e9c010512f
   LPPopupListView: 52eaeb26329b22a1040ea9f3c04270a2969ed791
+  REFrostedViewController: 93c85bf09c95c8166fc5314aa6811fb33611afb7
 
 COCOAPODS: 0.32.1

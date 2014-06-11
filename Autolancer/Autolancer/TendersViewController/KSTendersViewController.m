@@ -84,8 +84,8 @@
 
     cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1] /*#ebecee*/;//[UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
-    cell.titleLabel.backgroundColor = [UIColor colorWithRed:0.851 green:0.906 blue:0.949 alpha:1] /*#d9e7f2*/;
-   // cell.titleLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+   // cell.titleLabel.backgroundColor = [UIColor whiteColor];//[UIColor colorWithRed:0.851 green:0.906 blue:0.949 alpha:1] /*#d9e7f2*/;
+    //cell.titleLabel.textColor = [UIColor blackColor];//[UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     cell.titleLabel.text = tender.title;
     
     cell.carmarkLabel.text = tender.carmark;

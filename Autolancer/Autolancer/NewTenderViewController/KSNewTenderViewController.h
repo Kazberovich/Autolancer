@@ -7,27 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <BZGFormField/BZGFormField.h>
+#import <LPPopupListView/LPPopupListView.h>
+#import <LPPopupListViewCell.h>
+#import "DBCameraViewController.h"
+#import "DBCameraContainerViewController.h"
 
-@protocol BZGFormFieldDelegate;
+@interface KSNewTenderViewController : UIViewController<LPPopupListViewDelegate, DBCameraViewControllerDelegate>
 
-@interface KSNewTenderViewController : UIViewController<BZGFormFieldDelegate, UIActionSheetDelegate>
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, retain) IBOutlet UIButton *selectTenderType;
 @property (nonatomic, retain) IBOutlet UIButton *selectCatrgory;
-@property (nonatomic, retain) IBOutlet UIButton *selectCarmark;
-@property (nonatomic, retain) IBOutlet UIButton *selectCarModel;
-@property (nonatomic, retain) IBOutlet UIButton *selectCarYear;
 @property (nonatomic, retain) IBOutlet UIButton *selectPlace;
-@property (nonatomic, retain) IBOutlet UITextField *details;
+@property (nonatomic, retain) IBOutlet UITextView *typeTextView;
+@property (nonatomic, retain) IBOutlet UITextView *categoryTextView;
+@property (nonatomic, retain) IBOutlet UITextView *placeTextView;
 
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldTenderType;
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldCatrgory;
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldCarmark;
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldCarModel;
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldCarYear;
-@property (nonatomic, retain) IBOutlet BZGFormField *fieldPlace;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
 
-- (IBAction)showActionSheet:(id)sender;
+- (IBAction)buttonClicked:(id)selector;
 
 @end
