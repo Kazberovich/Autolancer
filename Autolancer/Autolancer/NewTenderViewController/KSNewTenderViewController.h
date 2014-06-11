@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LPPopupListView/LPPopupListView.h>
+#import <LPPopupListViewCell.h>
+#import "DBCameraViewController.h"
+#import "DBCameraContainerViewController.h"
 
-@interface KSNewTenderViewController : UIViewController
+@interface KSNewTenderViewController : UIViewController<LPPopupListViewDelegate, DBCameraViewControllerDelegate>
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+
+@property (nonatomic, retain) IBOutlet UIButton *selectTenderType;
+@property (nonatomic, retain) IBOutlet UIButton *selectCatrgory;
+@property (nonatomic, retain) IBOutlet UIButton *selectPlace;
+@property (nonatomic, retain) IBOutlet UITextView *typeTextView;
+@property (nonatomic, retain) IBOutlet UITextView *categoryTextView;
+@property (nonatomic, retain) IBOutlet UITextView *placeTextView;
+
+@property (nonatomic, retain) IBOutlet UIImageView *image;
+
+- (IBAction)buttonClicked:(id)selector;
 
 @end

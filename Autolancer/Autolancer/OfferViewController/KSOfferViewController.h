@@ -9,17 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <BZGFormField/BZGFormField.h>
 
-@interface KSOfferViewController : UIViewController <BZGFormFieldDelegate>
+@protocol BZGFormFieldDelegate;
+
+@interface KSOfferViewController : UIViewController <BZGFormFieldDelegate, UITextFieldDelegate>
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, retain) IBOutlet UITextField *offerDescription;
-@property (nonatomic, retain) IBOutlet UITextField *offerPrice;
-@property (nonatomic, retain) IBOutlet UITextField *offerMobilePhone;
-@property (nonatomic, retain) IBOutlet UITextField *offerAdditionalPhone;
-@property (nonatomic, retain) IBOutlet UITextField *offerSkype;
-@property (nonatomic, retain) IBOutlet UITextField *offerWebsite;
-@property (nonatomic, retain) IBOutlet UITextField *offerAddress;
-@property (nonatomic, retain) IBOutlet UITextField *offerWorkTime;
-@property (nonatomic, retain) IBOutlet UITextField *offerUserName;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerPrice;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerMobilePhone;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerAdditionalPhone;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerSkype;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerWebsite;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerAddress;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerWorkTime;
+@property (nonatomic, retain) IBOutlet BZGFormField *offerUserName;
 @property (nonatomic, retain) IBOutlet BZGFormField *offerEmail;
 @property (nonatomic, retain) IBOutlet UIView *mainFormsView;
 @property (nonatomic, retain) IBOutlet UIView *additionalFormsView;

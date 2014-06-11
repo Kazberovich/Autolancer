@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NIDropDown.h"
+#import <LPPopupListView/LPPopupListView.h>
+#import <LPPopupListViewCell.h>
 
-@interface KSAccountViewController : UIViewController
+@class AFViewShaker;
+
+@interface KSAccountViewController : UIViewController <LPPopupListViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) AFViewShaker *viewShaker;
+
+- (IBAction)buttonClicked:(id)selector;
 
 @end
