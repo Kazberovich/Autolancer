@@ -19,6 +19,7 @@
                         <segue destination="F9K-SU-WMh" kind="relationship" relationship="viewControllers" id="X24-6S-XMg"/>
                         <segue destination="JMQ-vL-GgO" kind="relationship" relationship="viewControllers" id="Qm0-Rs-R37"/>
                         <segue destination="SIp-Wa-xXo" kind="relationship" relationship="viewControllers" id="zzc-Va-xWS"/>
+                        <segue destination="goA-4E-qp1" kind="relationship" relationship="viewControllers" id="vhL-cM-khK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apV-YO-g2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,6 +347,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ic-bd-v09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-426" y="226"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Dwh-ur-Up0">
+            <objects>
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goA-4E-qp1" customClass="KSMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qH2-w8-5bF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="nHN-jm-r66"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ed-cn-ACJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="185"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="HIt-OD-SFC">
