@@ -19,7 +19,6 @@
 		FB15A4CA1909149000C307DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A4C91909149000C307DD /* main.m */; };
 		FB15A4CE1909149000C307DD /* KSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A4CD1909149000C307DD /* KSAppDelegate.m */; };
 		FB15A4D11909149000C307DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB15A4CF1909149000C307DD /* Main.storyboard */; };
-		FB15A4D41909149000C307DD /* KSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB15A4D31909149000C307DD /* KSViewController.m */; };
 		FB15A4D61909149000C307DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB15A4D51909149000C307DD /* Images.xcassets */; };
 		FB15A4DD1909149000C307DD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4DC1909149000C307DD /* XCTest.framework */; };
 		FB15A4DE1909149000C307DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BD1909149000C307DD /* Foundation.framework */; };
@@ -36,6 +35,10 @@
 		FB31A2771951B0FC00995DFA /* KSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB31A2761951B0FC00995DFA /* KSMapViewController.m */; };
 		FB3A452A1913E559006E1F97 /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A45291913E559006E1F97 /* at.png */; };
 		FB3A452C1913E664006E1F97 /* at_red.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A452B1913E664006E1F97 /* at_red.png */; };
+		FB477F9D19544FF9007D83E0 /* KSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB477F9C19544FF9007D83E0 /* KSViewController.m */; };
+		FB477F9F19547006007D83E0 /* kmenuedit.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477F9E19547006007D83E0 /* kmenuedit.png */; };
+		FB477FA119547095007D83E0 /* ui_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477FA019547095007D83E0 /* ui_menu.png */; };
+		FB477FA319547120007D83E0 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477FA219547120007D83E0 /* menu.png */; };
 		FB64E1E719474F7700BBF5F5 /* texturetastic_gray.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB64E1E619474F7700BBF5F5 /* texturetastic_gray.jpg */; };
 		FB64E1E9194750E900BBF5F5 /* gray.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FB64E1E8194750E900BBF5F5 /* gray.jpeg */; };
 		FB6B981D19190DDF00BF2E73 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B981A19190DDF00BF2E73 /* NIDropDown.m */; };
@@ -87,8 +90,6 @@
 		FB15A4CC1909149000C307DD /* KSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSAppDelegate.h; sourceTree = "<group>"; };
 		FB15A4CD1909149000C307DD /* KSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSAppDelegate.m; sourceTree = "<group>"; };
 		FB15A4D01909149000C307DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB15A4D21909149000C307DD /* KSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSViewController.h; sourceTree = "<group>"; };
-		FB15A4D31909149000C307DD /* KSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSViewController.m; sourceTree = "<group>"; };
 		FB15A4D51909149000C307DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB15A4DB1909149000C307DD /* AutolancerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolancerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB15A4DC1909149000C307DD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -114,6 +115,11 @@
 		FB31A2761951B0FC00995DFA /* KSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSMapViewController.m; path = MapViewController/KSMapViewController.m; sourceTree = "<group>"; };
 		FB3A45291913E559006E1F97 /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at.png; path = imgs/at.png; sourceTree = "<group>"; };
 		FB3A452B1913E664006E1F97 /* at_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at_red.png; path = imgs/at_red.png; sourceTree = "<group>"; };
+		FB477F9B19544FF9007D83E0 /* KSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSViewController.h; sourceTree = "<group>"; };
+		FB477F9C19544FF9007D83E0 /* KSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSViewController.m; sourceTree = "<group>"; };
+		FB477F9E19547006007D83E0 /* kmenuedit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kmenuedit.png; path = imgs/kmenuedit.png; sourceTree = "<group>"; };
+		FB477FA019547095007D83E0 /* ui_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ui_menu.png; path = imgs/ui_menu.png; sourceTree = "<group>"; };
+		FB477FA219547120007D83E0 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = imgs/menu.png; sourceTree = "<group>"; };
 		FB64E1E619474F7700BBF5F5 /* texturetastic_gray.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texturetastic_gray.jpg; path = imgs/texturetastic_gray.jpg; sourceTree = "<group>"; };
 		FB64E1E8194750E900BBF5F5 /* gray.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gray.jpeg; path = imgs/gray.jpeg; sourceTree = "<group>"; };
 		FB6B981919190DDF00BF2E73 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIDropDown.h; path = ThrirdParty/NIDropDown.h; sourceTree = "<group>"; };
@@ -229,14 +235,6 @@
 				FB15A4CF1909149000C307DD /* Main.storyboard */,
 				FB15A4CC1909149000C307DD /* KSAppDelegate.h */,
 				FB15A4CD1909149000C307DD /* KSAppDelegate.m */,
-				FB15A4D21909149000C307DD /* KSViewController.h */,
-				FB15A4D31909149000C307DD /* KSViewController.m */,
-				FB15A527190953DD00C307DD /* TendersViewController */,
-				FB15A528190953F600C307DD /* NewTenderViewController */,
-				CEC54DA7194C91930016758D /* SubscribesViewController */,
-				FB15A5291909540E00C307DD /* AccountViewController */,
-				FBA0158E190EA74900C2CA63 /* OfferViewController */,
-				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB31A2741951B09800995DFA /* Controllers */,
 				FB15A54219095A3100C307DD /* Models */,
 				CE6B1ED8190FE965003EA97A /* Helpers */,
@@ -287,6 +285,9 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FB477FA219547120007D83E0 /* menu.png */,
+				FB477FA019547095007D83E0 /* ui_menu.png */,
+				FB477F9E19547006007D83E0 /* kmenuedit.png */,
 				FB64E1E8194750E900BBF5F5 /* gray.jpeg */,
 				FB64E1E619474F7700BBF5F5 /* texturetastic_gray.jpg */,
 				FB9D2D901917D25000B8E7FE /* map.png */,
@@ -386,8 +387,14 @@
 		FB31A2741951B09800995DFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB15A4D21909149000C307DD /* KSViewController.h */,
-				FB15A4D31909149000C307DD /* KSViewController.m */,
+				FB477F9B19544FF9007D83E0 /* KSViewController.h */,
+				FB477F9C19544FF9007D83E0 /* KSViewController.m */,
+				FB15A527190953DD00C307DD /* TendersViewController */,
+				FB15A528190953F600C307DD /* NewTenderViewController */,
+				CEC54DA7194C91930016758D /* SubscribesViewController */,
+				FB15A5291909540E00C307DD /* AccountViewController */,
+				FBA0158E190EA74900C2CA63 /* OfferViewController */,
+				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB15A5291909540E00C307DD /* AccountViewController */,
 				FB15A528190953F600C307DD /* NewTenderViewController */,
 				FBA0158E190EA74900C2CA63 /* OfferViewController */,
@@ -492,7 +499,9 @@
 				FBA0159F190EB25500C2CA63 /* street_view.png in Resources */,
 				FBA0159E190EB25500C2CA63 /* skype.png in Resources */,
 				FB64E1E719474F7700BBF5F5 /* texturetastic_gray.jpg in Resources */,
+				FB477F9F19547006007D83E0 /* kmenuedit.png in Resources */,
 				FBA0158D190E9E9300C2CA63 /* no_image_ucoz_web.jpg in Resources */,
+				FB477FA319547120007D83E0 /* menu.png in Resources */,
 				FBA015A0190EB25500C2CA63 /* telephone_64.png in Resources */,
 				FB9D2D8F1917D18700B8E7FE /* phone.png in Resources */,
 				FBA0159C190EB25500C2CA63 /* mobile_phone.png in Resources */,
@@ -502,6 +511,7 @@
 				FB9D2D911917D25000B8E7FE /* map.png in Resources */,
 				FBA0159B190EB25500C2CA63 /* email.png in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
+				FB477FA119547095007D83E0 /* ui_menu.png in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
 				CE6B1EDA190FF9DB003EA97A /* user.png in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
@@ -556,9 +566,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB15A4D41909149000C307DD /* KSViewController.m in Sources */,
 				FB15A53B1909575B00C307DD /* ApiLoadService.m in Sources */,
 				FB15A4CE1909149000C307DD /* KSAppDelegate.m in Sources */,
+				FB477F9D19544FF9007D83E0 /* KSViewController.m in Sources */,
 				FB15A53D1909575B00C307DD /* NetworkStatusHelper.m in Sources */,
 				FB6B981E19190DDF00BF2E73 /* Reachability.m in Sources */,
 				CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */,

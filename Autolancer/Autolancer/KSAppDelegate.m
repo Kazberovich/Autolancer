@@ -9,11 +9,14 @@
 #import "KSAppDelegate.h"
 #import <BZGFormField/BZGFormField.h>
 
+
 @implementation KSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [BZGFormField class];
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

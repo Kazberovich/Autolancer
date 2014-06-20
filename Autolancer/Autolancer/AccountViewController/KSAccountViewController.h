@@ -11,13 +11,16 @@
 #import <LPPopupListView/LPPopupListView.h>
 #import <LPPopupListViewCell.h>
 
+#import <REFrostedViewController/RECommonFunctions.h>
+#import <REFrostedViewController/REFrostedContainerViewController.h>
+#import <REFrostedViewController/REFrostedViewController.h>
+
+#import <RNFrostedSidebar/RNFrostedSidebar.h>
+
 @class AFViewShaker;
 
-@interface KSAccountViewController : UIViewController <LPPopupListViewDelegate>
+@interface KSAccountViewController : UIViewController<RNFrostedSidebarDelegate>
 
-@property (nonatomic, retain) IBOutlet UITextView *textView;
-@property (nonatomic, retain) AFViewShaker *viewShaker;
-
-- (IBAction)buttonClicked:(id)selector;
+@property (nonatomic, retain) RNFrostedSidebar *sideBar;
 
 @end

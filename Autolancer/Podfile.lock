@@ -16,6 +16,7 @@ PODS:
     - GRMustache (= 6.8.3)
     - SMCalloutView (= 1.1)
   - REFrostedViewController (2.4.5)
+  - RNFrostedSidebar (0.2.0)
   - SMCalloutView (1.1)
 
 DEPENDENCIES:
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - LPPopupListView (~> 1.0.3)
   - MapBox
   - REFrostedViewController (~> 2.4.5)
+  - RNFrostedSidebar (~> 0.2.0)
 
 SPEC CHECKSUMS:
   BZGFormField: c469a07c251a9fd8bd8d8fce023896b15d752a99
@@ -36,6 +38,7 @@ SPEC CHECKSUMS:
   LPPopupListView: 52eaeb26329b22a1040ea9f3c04270a2969ed791
   MapBox: 01bd6999838d8dfbe8b48d33cae01ffcec8a7ab7
   REFrostedViewController: 93c85bf09c95c8166fc5314aa6811fb33611afb7
+  RNFrostedSidebar: f1d95d9b2627f13cc10e75d36e751a623eec079c
   SMCalloutView: b1c20930f57bc4470f5477979e2decf066397c82
 
 COCOAPODS: 0.32.1
