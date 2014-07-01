@@ -12,6 +12,12 @@
 		CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */; };
 		CE6B1EDA190FF9DB003EA97A /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6B1ED9190FF9DB003EA97A /* user.png */; };
 		CEC54DAA194C91DD0016758D /* KSSubscribesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */; };
+		FB153F2E1962F6AA00A555B1 /* medical32.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F2D1962F6AA00A555B1 /* medical32.png */; };
+		FB153F301962F75300A555B1 /* new_tender.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F2F1962F75300A555B1 /* new_tender.png */; };
+		FB153F321962F81F00A555B1 /* new_tender2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F311962F81F00A555B1 /* new_tender2.png */; };
+		FB153F3C1962FFD400A555B1 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F3B1962FFD400A555B1 /* add.png */; };
+		FB153F3E1963004300A555B1 /* subscribes1.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F3D1963004300A555B1 /* subscribes1.png */; };
+		FB153F401963019500A555B1 /* apply.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F3F1963019500A555B1 /* apply.png */; };
 		FB15A4BE1909149000C307DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BD1909149000C307DD /* Foundation.framework */; };
 		FB15A4C01909149000C307DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4BF1909149000C307DD /* CoreGraphics.framework */; };
 		FB15A4C21909149000C307DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB15A4C11909149000C307DD /* UIKit.framework */; };
@@ -79,6 +85,12 @@
 		CEC54DA8194C91DD0016758D /* KSSubscribesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSSubscribesViewController.h; path = SubscribesViewController/KSSubscribesViewController.h; sourceTree = "<group>"; };
 		CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSSubscribesViewController.m; path = SubscribesViewController/KSSubscribesViewController.m; sourceTree = "<group>"; };
 		E7E49B2B661C456CBF711F22 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB153F2D1962F6AA00A555B1 /* medical32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = medical32.png; path = imgs/medical32.png; sourceTree = "<group>"; };
+		FB153F2F1962F75300A555B1 /* new_tender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_tender.png; path = imgs/new_tender.png; sourceTree = "<group>"; };
+		FB153F311962F81F00A555B1 /* new_tender2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_tender2.png; path = imgs/new_tender2.png; sourceTree = "<group>"; };
+		FB153F3B1962FFD400A555B1 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = imgs/add.png; sourceTree = "<group>"; };
+		FB153F3D1963004300A555B1 /* subscribes1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = subscribes1.png; path = imgs/subscribes1.png; sourceTree = "<group>"; };
+		FB153F3F1963019500A555B1 /* apply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apply.png; path = imgs/apply.png; sourceTree = "<group>"; };
 		FB15A4BA1909149000C307DD /* Autolancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB15A4BD1909149000C307DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB15A4BF1909149000C307DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,6 +207,15 @@
 			name = SubscribesViewController;
 			sourceTree = "<group>";
 		};
+		FB153F2A1962EE5900A555B1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FB15A4CF1909149000C307DD /* Main.storyboard */,
+				FB31A2741951B09800995DFA /* Controllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		FB15A4B11909149000C307DD = {
 			isa = PBXGroup;
 			children = (
@@ -232,10 +253,9 @@
 		FB15A4C31909149000C307DD /* Autolancer */ = {
 			isa = PBXGroup;
 			children = (
-				FB15A4CF1909149000C307DD /* Main.storyboard */,
 				FB15A4CC1909149000C307DD /* KSAppDelegate.h */,
 				FB15A4CD1909149000C307DD /* KSAppDelegate.m */,
-				FB31A2741951B09800995DFA /* Controllers */,
+				FB153F2A1962EE5900A555B1 /* UI */,
 				FB15A54219095A3100C307DD /* Models */,
 				CE6B1ED8190FE965003EA97A /* Helpers */,
 				FB15A5331909570C00C307DD /* API */,
@@ -285,6 +305,12 @@
 		FB15A5221909533C00C307DD /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FB153F3F1963019500A555B1 /* apply.png */,
+				FB153F3D1963004300A555B1 /* subscribes1.png */,
+				FB153F3B1962FFD400A555B1 /* add.png */,
+				FB153F311962F81F00A555B1 /* new_tender2.png */,
+				FB153F2F1962F75300A555B1 /* new_tender.png */,
+				FB153F2D1962F6AA00A555B1 /* medical32.png */,
 				FB477FA219547120007D83E0 /* menu.png */,
 				FB477FA019547095007D83E0 /* ui_menu.png */,
 				FB477F9E19547006007D83E0 /* kmenuedit.png */,
@@ -493,10 +519,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB153F3E1963004300A555B1 /* subscribes1.png in Resources */,
+				FB153F3C1962FFD400A555B1 /* add.png in Resources */,
 				FB64E1E9194750E900BBF5F5 /* gray.jpeg in Resources */,
 				FBA015A1190EB25500C2CA63 /* web.png in Resources */,
 				FBA0159D190EB25500C2CA63 /* money_dollar.png in Resources */,
 				FBA0159F190EB25500C2CA63 /* street_view.png in Resources */,
+				FB153F401963019500A555B1 /* apply.png in Resources */,
+				FB153F301962F75300A555B1 /* new_tender.png in Resources */,
 				FBA0159E190EB25500C2CA63 /* skype.png in Resources */,
 				FB64E1E719474F7700BBF5F5 /* texturetastic_gray.jpg in Resources */,
 				FB477F9F19547006007D83E0 /* kmenuedit.png in Resources */,
@@ -512,8 +542,10 @@
 				FBA0159B190EB25500C2CA63 /* email.png in Resources */,
 				FB15A4D61909149000C307DD /* Images.xcassets in Resources */,
 				FB477FA119547095007D83E0 /* ui_menu.png in Resources */,
+				FB153F2E1962F6AA00A555B1 /* medical32.png in Resources */,
 				FB15A4C81909149000C307DD /* InfoPlist.strings in Resources */,
 				CE6B1EDA190FF9DB003EA97A /* user.png in Resources */,
+				FB153F321962F81F00A555B1 /* new_tender2.png in Resources */,
 				FB15A4D11909149000C307DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

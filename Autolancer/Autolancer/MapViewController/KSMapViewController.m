@@ -15,28 +15,22 @@
 
 @implementation KSMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize mapView = _mapView;
+
+- (void)dealloc
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [_mapView release];
+    [super dealloc];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"kazbers.ihp877h9"];
+    RMMapboxSource *tileSource = [[[RMMapboxSource alloc] initWithMapID:@"kazbers.ihp877h9"] autorelease];
+    _mapView = [[[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource] autorelease];
     
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource];
-    
-    [self.view addSubview:mapView];
-    
-
-    
-   // [mapView addAnnotation:annotation];
+    [self.view addSubview:_mapView];
 }
 
 - (void)didReceiveMemoryWarning

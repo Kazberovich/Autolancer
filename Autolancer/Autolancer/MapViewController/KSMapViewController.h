@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class RMMapView;
+
 @interface KSMapViewController : UIViewController
+
+@property (nonatomic, retain) RMMapView *mapView;
 
 @end

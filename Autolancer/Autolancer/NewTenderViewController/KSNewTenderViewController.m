@@ -61,7 +61,7 @@
     self.tabBarController.title = @"Новый заказ";
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
-    
+    doneItem.image = [UIImage imageNamed:@"apply.png"];
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(openCamera)];
     NSArray *actionButtonItems = @[doneItem];
     

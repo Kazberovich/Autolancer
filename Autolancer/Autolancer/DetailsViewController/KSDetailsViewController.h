@@ -13,6 +13,7 @@
 @interface KSDetailsViewController : UIViewController
 
 @property (nonatomic, retain) KSTender *tender;
+
 @property (nonatomic, retain) IBOutlet UILabel *tenderTitle;
 @property (nonatomic, retain) IBOutlet UILabel *tenderCarMark;
 @property (nonatomic, retain) IBOutlet UILabel *tenderCarmodel;
@@ -26,10 +27,8 @@
 @property (nonatomic, retain) IBOutlet UIImageView *imageView2;
 @property (nonatomic, retain) IBOutlet UILabel *tenderPostdate;
 @property (nonatomic, retain) IBOutlet UILabel *tenderPlace;
-
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)takeOffer:(id)sender;
-
 
 @end

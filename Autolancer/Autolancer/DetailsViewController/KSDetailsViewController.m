@@ -58,16 +58,19 @@
     [_scrollView setScrollEnabled:YES];
     [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
-	_tenderTitle.text = _tender.title;
-    _tenderCarMark.text = _tender.carmark;
-    _tenderCarmodel.text = _tender.carmodel;
-    _tenderCaryear.text = _tender.carYear;
-    _tenderType.text = _tender.type;
-    _tenderPostdate.text = _tender.postDate;
-    _tenderViews.text = _tender.views;
-    _tenderOffers.text = [NSString stringWithFormat:@"%@",  _tender.offers];
-    _tenderStatus.text = [_tender.status isEqualToString:@"1"] ? @"Не актуально" : @"Актуально";
-    _tenderPlace.text = _tender.place;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+       	
+        _tenderTitle.text = _tender.title;
+        _tenderCarMark.text = _tender.carmark;
+        _tenderCarmodel.text = _tender.carmodel;
+        _tenderCaryear.text = _tender.carYear;
+        _tenderType.text = _tender.type;
+        _tenderPostdate.text = _tender.postDate;
+        _tenderViews.text = _tender.views;
+        _tenderOffers.text = [NSString stringWithFormat:@"%@",  _tender.offers];
+        _tenderStatus.text = [_tender.status isEqualToString:@"1"] ? @"Не актуально" : @"Актуально";
+        _tenderPlace.text = _tender.place;
+    });
     
     [NSString stringWithFormat:@"%@", @"s"];
     
@@ -85,9 +88,6 @@
         {
             _tenderDescription.text = @"Нет описания";
         }
-        
-        
-
     }];
 }
 
@@ -97,4 +97,5 @@
                                                     instantiateViewControllerWithIdentifier:@"offer"];
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
+
 @end

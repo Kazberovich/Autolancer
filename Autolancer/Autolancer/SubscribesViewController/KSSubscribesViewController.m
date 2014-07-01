@@ -20,6 +20,7 @@
 @end
 
 @implementation KSSubscribesViewController
+
 @synthesize scrollView = _scrollView;
 @synthesize selectTenderType = _selectTenderType;
 @synthesize selectCatrgory = _selectCatrgory;
@@ -28,13 +29,17 @@
 @synthesize selectedIndexesForCategories;
 @synthesize selectedIndexesForPlaces;
 @synthesize selectedIndexesForTypes;
+@synthesize typeTextView = _typeTextView;
+@synthesize currentTag =_currentTag;
 
 - (void)dealloc
 {
     selectedIndexesForCategories = nil;
     selectedIndexesForPlaces = nil;
     selectedIndexesForTypes = nil;
+    _currentTag = nil;
     
+    [_typeTextView release];
     [_scrollView release];
     [_selectTenderType release];
     [_selectCatrgory release];
@@ -72,38 +77,35 @@
     
     CGPoint point = CGPointMake(paddingLeftRight, (self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + paddingTopBottom);
     CGSize size = CGSizeMake((self.view.frame.size.width - (paddingLeftRight * 2)), self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height - ((self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + (paddingTopBottom * 2)));
-    
-    NSString *listTitle = [[[NSString alloc] init] autorelease];
+
     
     switch ([selector tag]) {
-            case 0:
+        case 0:
         {
-            listTitle = @"Тип заказа";
-            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForTypes point:point size:size multipleSelection:YES];
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Тип заказа" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForTypes point:point size:size multipleSelection:YES];
             listView.delegate = self;
             
             [listView showInView:self.navigationController.view animated:YES];
             break;
         }
-            case 1:
+        case 1:
         {
-            listTitle = @"Категории";
-            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCategories point:point size:size multipleSelection:YES];
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Категории" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCategories point:point size:size multipleSelection:YES];
             listView.delegate = self;
             
             [listView showInView:self.navigationController.view animated:YES];
             break;
         }
-            case 2:
+        case 2:
         {
-            listTitle = @"Местоположение";
-            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Местоположение" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
             listView.delegate = self;
             
             [listView showInView:self.navigationController.view animated:YES];
             break;
         }
         default:
+            
             break;
     }
 }
@@ -124,7 +126,7 @@
         {
             self.selectedIndexesForTypes = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             
-            self.typeTextView.text = @"";
+            _typeTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
                 self.typeTextView.text = [self.typeTextView.text stringByAppendingFormat:@"%@\n", [[self list:0] objectAtIndex:idx]];
             }];
