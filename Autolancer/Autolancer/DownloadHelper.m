@@ -61,6 +61,28 @@
     return fullUrl;
 }
 
+// autolancer methods
+//@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tendertypes&uid=rrrr&user_id=3"
++ (NSString *)getTenderTypesURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID
+{
+    NSString *fullURL = [self append: cstAutolanderBaseURL, cstAutolancerAction, cstMethodTenderTypes, ampersant, cstAutolancerUUID, uuid, ampersant, cstAutolancerUserID, userID, nil];
+    return fullURL;
+}
+
+//http://autolancer.by/wp-admin/admin-ajax.php?action=get_tendercats&tendertype_id=3&uid=rrrr&user_id=3
++ (NSString *)getCategoriesForTendertypeID:(NSString *)tenderTypeID andUUID:(NSString *)uuid withUserID:(NSString *)userID
+{
+    NSString *fullURL = [self append:cstAutolanderBaseURL, cstAutolancerAction, cstMethodCategoriesForType, ampersant, cstTenderTypeID, tenderTypeID, ampersant, cstAutolancerUUID, uuid, ampersant, cstAutolancerUserID, userID, nil];
+    return fullURL;
+}
+
+//http://autolancer.by/wp-admin/admin-ajax.php?action=get_regions&uid=rrrr&user_id=3
++ (NSString *)getRegionsURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID
+{
+    NSString *fullURL = [self append: cstAutolanderBaseURL, cstAutolancerAction, cstMethodRegions, ampersant, cstAutolancerUUID, uuid, ampersant, cstAutolancerUserID, userID, nil];
+    return fullURL;
+}
+
 + (NSString *) append:(id) first, ...
 {
     NSString * result = @"";
