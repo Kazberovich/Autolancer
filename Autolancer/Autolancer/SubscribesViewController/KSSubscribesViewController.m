@@ -16,18 +16,21 @@
 @interface KSSubscribesViewController ()
 
 @property (nonatomic, retain) NSArray *loadedTypesArray;
-@property (nonatomic, retain) NSMutableArray *loadedTypes;
-
 @property (nonatomic, retain) NSArray *loadedCategoriesArray;
-@property (nonatomic, retain) NSMutableArray *loadedCategories;
-
+@property (nonatomic, retain) NSArray *loadedCarmarksArray;
 @property (nonatomic, retain) NSArray *loadedPlacesArray;
+
 @property (nonatomic, retain) NSMutableArray *loadedPlaces;
+@property (nonatomic, retain) NSMutableArray *loadedCarmarks;
+@property (nonatomic, retain) NSMutableArray *loadedCategories;
+@property (nonatomic, retain) NSMutableArray *loadedTypes;
 
 @property (nonatomic, retain) NSMutableIndexSet *selectedIndexes;
 @property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForCategories;
 @property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForPlaces;
 @property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForTypes;
+@property (nonatomic, retain) NSMutableIndexSet *selectedIndexesForCarmarks;
+
 @property (assign) NSInteger currentTag;
 
 @end
@@ -42,16 +45,19 @@
 @synthesize selectedIndexesForCategories;
 @synthesize selectedIndexesForPlaces;
 @synthesize selectedIndexesForTypes;
+@synthesize selectedIndexesForCarmarks = _selectedIndexesForCarmarks;
 @synthesize typeTextView = _typeTextView;
 @synthesize currentTag =_currentTag;
 @synthesize loadedPlaces = _loadedPlaces;
 @synthesize loadedPlacesArray = _loadedPlacesArray;
 
+
 - (void)dealloc
 {
-    selectedIndexesForCategories = nil;
-    selectedIndexesForPlaces = nil;
-    selectedIndexesForTypes = nil;
+    self.selectedIndexesForCategories = nil;
+    self.selectedIndexesForPlaces = nil;
+    self.selectedIndexesForTypes = nil;
+    self.selectedIndexesForCarmarks = nil;
 
     [_typeTextView release];
     [_scrollView release];
@@ -110,6 +116,25 @@
                                  }
                                  [_loadedPlaces retain];
                              }];
+    
+    [ApiLoadService getResponseForURL:[NSURL URLWithString:[DownloadHelper getRegionsURLWithUUID:@"rrr" andUserID:@"3"]]
+                             callback:^(NSDictionary *dictionary, NSURL *url) {
+                                 
+                                 NSLog(@"%@" , dictionary);
+                                 _loadedCarmarks = [[[NSMutableArray alloc] init] autorelease];
+                                 
+                                 NSDictionary *dataDict = [dictionary objectForKey:@"data"];
+                                 NSDictionary *regions = [dataDict objectForKey:@"carmarks"];
+                                 NSLog(@"%@", regions);
+                                 
+                                 for(id region in regions)
+                                 {
+                                     KSTenderPlace *place = [[KSTenderPlace alloc] initWithServerResponse:region];
+                                     [_loadedCarmarks addObject:place];
+                                     [place release];
+                                 }
+                                 [_loadedCarmarks retain];
+                             }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -162,6 +187,14 @@
             break;
         }
         case 3:
+        {
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Автомобили" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
+            listView.delegate = self;
+            
+            [listView showInView:self.navigationController.view animated:YES];
+            break;
+        }
+        case 4:
         {
             NSLog(@"go to subscribes list");
             

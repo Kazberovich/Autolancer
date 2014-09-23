@@ -20,6 +20,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *typeTextView;
 @property (nonatomic, retain) IBOutlet UITextView *categoryTextView;
 @property (nonatomic, retain) IBOutlet UITextView *placeTextView;
+@property (nonatomic, retain) IBOutlet UITextView *carmarkTextView;
 
 - (IBAction)buttonClicked:(id)selector;
 

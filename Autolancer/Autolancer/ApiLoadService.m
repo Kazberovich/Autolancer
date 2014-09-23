@@ -9,6 +9,7 @@
 #import "ApiLoadService.h"
 #import "DownloadHelper.h"
 #import "NetworkStatusHelper.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation ApiLoadService
 
@@ -119,42 +120,23 @@
     NSLog(@"carmarks = %@", categoriesString);
     */
     
-    NSString *carmarkString = @"1273:69:1514";
+    NSString *carmarkString = @"1273:1152:1460:1055:14:1369:1055";
     NSString *cats = @"1906:1907";
     
-    NSDictionary *newDatasetInfo = [[NSDictionary alloc ] initWithObjectsAndKeys: carmarkString, @"carmarks", placesString, @"places", categoriesString, @"cats", uuid, @"uuid", nil];
+    NSDictionary *newDatasetInfo = [[NSDictionary alloc ] initWithObjectsAndKeys:categoriesString, @"cats", carmarkString, @"carmarks", placesString, @"places", uuid, @"uuid", nil];
     NSLog(@"%@", newDatasetInfo);
     
     NSError*error;
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_subscribed_tenders"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
-    
-    [request setHTTPBody:jsonData];
-    
-    NSURLResponse *response;
-    NSData *jsonDataResponse = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    [request release];
-    
-    NSDictionary *results = jsonDataResponse ? [NSJSONSerialization JSONObjectWithData:jsonDataResponse options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if(results)
-        {
-           
-        }
-        else
-        {
-            
-        }
-    });
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 
+    [manager POST:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_subscribed_tenders" parameters:newDatasetInfo success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+    {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 @end
