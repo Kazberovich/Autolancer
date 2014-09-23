@@ -161,8 +161,38 @@
             [listView showInView:self.navigationController.view animated:YES];
             break;
         }
-        default:
+        case 3:
+        {
+            NSLog(@"go to subscribes list");
             
+            NSMutableArray *placesIDs = [[NSMutableArray alloc] init];
+            [self.selectedIndexesForPlaces enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                [placesIDs addObject:((KSTenderPlace *)[self.loadedPlaces objectAtIndex:idx]).ID];
+            }];
+            [placesIDs retain];
+            
+            NSMutableArray *categoryIDs = [[NSMutableArray alloc] init];
+            [self.selectedIndexesForCategories enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                [categoryIDs addObject:((KSTenderCategory *)[self.loadedCategories objectAtIndex:idx]).ID];
+            }];
+            [categoryIDs retain];
+            [placesIDs retain];
+            
+            NSMutableArray *tenderTypeIDs = [[NSMutableArray alloc] init] ;
+            [self.selectedIndexesForTypes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                [tenderTypeIDs addObject:((KSTenderType *)[self.loadedTypes objectAtIndex:idx]).ID];
+            }];
+            [placesIDs retain];
+            [categoryIDs retain];
+            [tenderTypeIDs retain];
+            
+            [ApiLoadService getSubscribesList:@"get_subscribed_tenders" withPlaces:placesIDs withCategories:categoryIDs withCarmarks:tenderTypeIDs withUUID:@"rrr" withUserID:@"3" withCallback:^(NSDictionary *dictionary) {
+                
+            }];
+            
+            break;
+        }
+        default:
             break;
     }
 }
@@ -172,6 +202,7 @@
 - (void)popupListView:(LPPopupListView *)popUpListView didSelectIndex:(NSInteger)index
 {
     NSLog(@"popUpListView - didSelectIndex: %ld", (long)index);
+    self.selectedIndexesForTypes = [[NSMutableIndexSet alloc] initWithIndex:index];
     
     switch (self.currentTag) {
         case 0:

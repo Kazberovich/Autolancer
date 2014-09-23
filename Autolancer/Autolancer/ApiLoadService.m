@@ -88,9 +88,73 @@
         }
         else
         {
-
         }
     });
+}
+
++ (void)getSubscribesList:(NSString *)actionName withPlaces:(NSMutableArray *)places withCategories:(NSMutableArray *)categories withCarmarks:(NSMutableArray *)carmarks withUUID:(NSString *)uuid withUserID:(NSString *)userID withCallback:(void (^)(NSDictionary *dictionary)) callback
+{
+    NSMutableString *placesString = [[NSMutableString alloc] init];
+    for (NSString* place in places) {
+        [placesString appendString:place];
+        [placesString appendString:@":"];
+    }
+    [placesString deleteCharactersInRange:NSMakeRange([placesString length]-1, 1)];
+    NSLog(@"places = %@", placesString);
+    
+    NSMutableString *categoriesString = [[NSMutableString alloc] init];
+    for (NSString* category in categories) {
+        [categoriesString appendString:category];
+        [categoriesString appendString:@":"];
+    }
+    [categoriesString deleteCharactersInRange:NSMakeRange([categoriesString length]-1, 1)];
+    NSLog(@"categories = %@", categoriesString);
+    
+   /* NSMutableString *carmarksString = [[NSMutableString alloc] init];
+    for (NSString* carmark in carmarks) {
+        [carmarksString appendString:carmark];
+        [carmarksString appendString:@":"];
+    }
+    [carmarksString deleteCharactersInRange:NSMakeRange([carmarksString length]-1, 1)];
+    NSLog(@"carmarks = %@", categoriesString);
+    */
+    
+    NSString *carmarkString = @"1273:69:1514";
+    NSString *cats = @"1906:1907";
+    
+    NSDictionary *newDatasetInfo = [[NSDictionary alloc ] initWithObjectsAndKeys: carmarkString, @"carmarks", placesString, @"places", categoriesString, @"cats", uuid, @"uuid", nil];
+    NSLog(@"%@", newDatasetInfo);
+    
+    NSError*error;
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_subscribed_tenders"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+    
+    [request setHTTPBody:jsonData];
+    
+    NSURLResponse *response;
+    NSData *jsonDataResponse = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    [request release];
+    
+    NSDictionary *results = jsonDataResponse ? [NSJSONSerialization JSONObjectWithData:jsonDataResponse options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(results)
+        {
+           
+        }
+        else
+        {
+            
+        }
+    });
+
 }
 
 @end

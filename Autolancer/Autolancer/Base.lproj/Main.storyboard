@@ -395,12 +395,15 @@
                                             <action selector="buttonClicked:" destination="red-PG-ksJ" eventType="touchUpInside" id="tqx-D1-4Le"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Bzf-JR-bWx">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Bzf-JR-bWx">
                                         <rect key="frame" x="20" y="391" width="280" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Перейти к подпискам"/>
+                                        <connections>
+                                            <action selector="buttonClicked:" destination="red-PG-ksJ" eventType="touchUpInside" id="uUK-Ra-R4a"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="jNa-Qt-Cwu">
                                         <rect key="frame" x="20" y="58" width="135" height="154"/>
@@ -413,8 +416,8 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Aie-BM-fMI">
                                         <rect key="frame" x="20" y="254" width="135" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Superclarendon-Bold" family="Superclarendon" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>

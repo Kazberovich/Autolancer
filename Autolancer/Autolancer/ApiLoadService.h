@@ -10,7 +10,8 @@
 
 @interface ApiLoadService : NSObject
 
-+ (void) getResponseForURL: (NSURL*) url callback:(void (^)(NSDictionary *dictionary, NSURL *url)) callback;
-+ (void) actionWithWatchlist: (BOOL) addOrRemove :(NSString*) filmId  callback:(void (^)(NSDictionary *dictionary)) callback;
++ (void)getResponseForURL: (NSURL*) url callback:(void (^)(NSDictionary *dictionary, NSURL *url)) callback;
++ (void)actionWithWatchlist: (BOOL) addOrRemove :(NSString*) filmId  callback:(void (^)(NSDictionary *dictionary)) callback;
++ (void)getSubscribesList:(NSString *)actionName withPlaces:(NSMutableArray *)places withCategories:(NSMutableArray *)categories withCarmarks:(NSMutableArray *)carmarks withUUID:(NSString *)uuid withUserID:(NSString *)userID withCallback:(void (^)(NSDictionary *dictionary)) callback;
 
 @end
