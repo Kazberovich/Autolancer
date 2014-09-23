@@ -44,6 +44,8 @@
 //regions
 #define cstMethodRegions @"get_regions"
 
+#define cstMethodCarmarks @"get_carmarks"
+
 @interface DownloadHelper : NSObject
 
 @property (nonatomic, retain) NSString *movieId;
@@ -61,6 +63,6 @@
 + (NSString *)getTenderTypesURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
 + (NSString *)getCategoriesForTendertypeID:(NSString *)tenderTypeID andUUID:(NSString *)uuid withUserID:(NSString *)userID;
 + (NSString *)getRegionsURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
-
++ (NSString *)getCarmarksURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
 
 @end

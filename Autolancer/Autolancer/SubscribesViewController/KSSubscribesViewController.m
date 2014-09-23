@@ -12,6 +12,7 @@
 #import "KSTenderType.h"
 #import "KSTenderCategory.h"
 #import "KSTenderPlace.h"
+#import "KSCarmark.h"
 
 @interface KSSubscribesViewController ()
 
@@ -45,7 +46,7 @@
 @synthesize selectedIndexesForCategories;
 @synthesize selectedIndexesForPlaces;
 @synthesize selectedIndexesForTypes;
-@synthesize selectedIndexesForCarmarks = _selectedIndexesForCarmarks;
+@synthesize selectedIndexesForCarmarks;
 @synthesize typeTextView = _typeTextView;
 @synthesize currentTag =_currentTag;
 @synthesize loadedPlaces = _loadedPlaces;
@@ -117,21 +118,21 @@
                                  [_loadedPlaces retain];
                              }];
     
-    [ApiLoadService getResponseForURL:[NSURL URLWithString:[DownloadHelper getRegionsURLWithUUID:@"rrr" andUserID:@"3"]]
+    [ApiLoadService getResponseForURL:[NSURL URLWithString:[DownloadHelper getCarmarksURLWithUUID:@"rrr" andUserID:@"3"]]
                              callback:^(NSDictionary *dictionary, NSURL *url) {
                                  
                                  NSLog(@"%@" , dictionary);
                                  _loadedCarmarks = [[[NSMutableArray alloc] init] autorelease];
                                  
                                  NSDictionary *dataDict = [dictionary objectForKey:@"data"];
-                                 NSDictionary *regions = [dataDict objectForKey:@"carmarks"];
-                                 NSLog(@"%@", regions);
+                                 NSDictionary *carmarks = [dataDict objectForKey:@"carmarks"];
+                                 NSLog(@"%@", carmarks);
                                  
-                                 for(id region in regions)
+                                 for(id carmark in carmarks)
                                  {
-                                     KSTenderPlace *place = [[KSTenderPlace alloc] initWithServerResponse:region];
-                                     [_loadedCarmarks addObject:place];
-                                     [place release];
+                                     KSCarmark *mark = [[KSCarmark alloc] initWithServerResponse:carmark];
+                                     [_loadedCarmarks addObject:mark];
+                                     [mark release];
                                  }
                                  [_loadedCarmarks retain];
                              }];
@@ -188,7 +189,7 @@
         }
         case 3:
         {
-            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Автомобили" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
+            LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:@"Автомобили" list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCarmarks point:point size:size multipleSelection:YES];
             listView.delegate = self;
             
             [listView showInView:self.navigationController.view animated:YES];
@@ -282,6 +283,13 @@
             
             break;
         }
+        case 3:
+        {
+            self.carmarkTextView.text = @"";
+            self.carmarkTextView.text = [self.carmarkTextView.text stringByAppendingFormat:@" - %@\n", [[self list:3] objectAtIndex:index]];
+            
+            break;
+        }
             
         default:
             break;
@@ -328,6 +336,18 @@
             
             break;
         }
+        case 3:
+        {
+            self.selectedIndexesForCarmarks = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+            
+            self.placeTextView.text = @"";
+            [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                self.carmarkTextView.text = [self.carmarkTextView.text stringByAppendingFormat:@" - %@\n", [[self list:3] objectAtIndex:idx]];
+            }];
+            
+            break;
+        }
+
             
         default:
             break;
@@ -375,6 +395,18 @@
             _loadedPlacesArray = [NSArray arrayWithArray:placesArray];
             return _loadedPlacesArray;
            
+            break;
+        }
+        case 3:
+        {
+            NSMutableArray *carmarkArray = [[[NSMutableArray alloc] init] autorelease];
+            for (KSCarmark *carmark in _loadedCarmarks)
+            {
+                [carmarkArray addObject:carmark.title];
+            }
+            _loadedCarmarksArray = [NSArray arrayWithArray:carmarkArray];
+            return _loadedCarmarksArray;
+            
             break;
         }
         default:

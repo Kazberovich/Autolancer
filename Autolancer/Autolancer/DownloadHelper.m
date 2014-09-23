@@ -83,6 +83,13 @@
     return fullURL;
 }
 
+//http://autolancer.by/wp-admin/admin-ajax.php?action=get_carmarks&uid=rrrr&user_id=3
++ (NSString *)getCarmarksURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID
+{
+     NSString *fullURL = [self append: cstAutolanderBaseURL, cstAutolancerAction, cstMethodCarmarks, ampersant, cstAutolancerUUID, uuid, ampersant, cstAutolancerUserID, userID, nil];
+    return fullURL;
+}
+
 + (NSString *) append:(id) first, ...
 {
     NSString * result = @"";
