@@ -60,6 +60,9 @@
 {
     self.tabBarController.title = @"Новый заказ";
     
+    [_scrollView setScrollEnabled:YES];
+    [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - self.tabBarController.tabBar.bounds.size.height)];
+    
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
     doneItem.image = [UIImage imageNamed:@"apply.png"];
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(openCamera)];

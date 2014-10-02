@@ -23,7 +23,9 @@
         self.carYear = [responseObject objectForKey:@"caryear"];
         self.place = [responseObject objectForKey:@"place"];
         self.type = [responseObject objectForKey:@"tender_type"];
-        self.description = [responseObject objectForKey:@"description"];
+        if ([responseObject objectForKey:@"description"]) {
+            self.description = [responseObject objectForKey:@"description"];
+        }
         self.views = [responseObject objectForKey:@"views"];
         self.offers = [responseObject objectForKey:@"offers"];
         self.postDate = [responseObject objectForKey:@"post_date"];
