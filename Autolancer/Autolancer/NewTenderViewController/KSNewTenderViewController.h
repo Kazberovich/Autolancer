@@ -15,13 +15,15 @@
 @interface KSNewTenderViewController : UIViewController<LPPopupListViewDelegate, DBCameraViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *indicator;
 @property (nonatomic, retain) IBOutlet UIButton *selectTenderType;
 @property (nonatomic, retain) IBOutlet UIButton *selectCatrgory;
 @property (nonatomic, retain) IBOutlet UIButton *selectPlace;
 @property (nonatomic, retain) IBOutlet UITextView *typeTextView;
 @property (nonatomic, retain) IBOutlet UITextView *categoryTextView;
 @property (nonatomic, retain) IBOutlet UITextView *placeTextView;
+@property (nonatomic, retain) IBOutlet UITextView *carmarkTextView;
+@property (nonatomic, retain) IBOutlet UITextView *carmodelTextView;
 
 @property (nonatomic, retain) IBOutlet UIImageView *image;
 

@@ -10,6 +10,7 @@
 		3FC4956885854F85AFF7E04B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E49B2B661C456CBF711F22 /* libPods.a */; };
 		CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F22190D253500E13870 /* KSTenderCell.m */; };
 		CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */; };
+		CE620A7E19E15AEE00C57953 /* KSCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE620A7D19E15AEE00C57953 /* KSCarModel.m */; };
 		CE6B1EDA190FF9DB003EA97A /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6B1ED9190FF9DB003EA97A /* user.png */; };
 		CEC54DAA194C91DD0016758D /* KSSubscribesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */; };
 		FB153F2E1962F6AA00A555B1 /* medical32.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F2D1962F6AA00A555B1 /* medical32.png */; };
@@ -84,6 +85,8 @@
 		CE3A1F22190D253500E13870 /* KSTenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTenderCell.m; path = TendersViewController/KSTenderCell.m; sourceTree = "<group>"; };
 		CE3A1F28190D73EC00E13870 /* KSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSDetailsViewController.h; path = DetailsViewController/KSDetailsViewController.h; sourceTree = "<group>"; };
 		CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSDetailsViewController.m; path = DetailsViewController/KSDetailsViewController.m; sourceTree = "<group>"; };
+		CE620A7C19E15AEE00C57953 /* KSCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSCarModel.h; path = Models/KSCarModel.h; sourceTree = "<group>"; };
+		CE620A7D19E15AEE00C57953 /* KSCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSCarModel.m; path = Models/KSCarModel.m; sourceTree = "<group>"; };
 		CE6B1ED9190FF9DB003EA97A /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = imgs/user.png; sourceTree = "<group>"; };
 		CEC54DA8194C91DD0016758D /* KSSubscribesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSSubscribesViewController.h; path = SubscribesViewController/KSSubscribesViewController.h; sourceTree = "<group>"; };
 		CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSSubscribesViewController.m; path = SubscribesViewController/KSSubscribesViewController.m; sourceTree = "<group>"; };
@@ -412,6 +415,8 @@
 				FB8290A219D06D1F00671F56 /* KSTenderPlace.m */,
 				FB4414D019D1D8460072E862 /* KSCarmark.h */,
 				FB4414D119D1D8460072E862 /* KSCarmark.m */,
+				CE620A7C19E15AEE00C57953 /* KSCarModel.h */,
+				CE620A7D19E15AEE00C57953 /* KSCarModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -430,12 +435,7 @@
 			children = (
 				FB477F9B19544FF9007D83E0 /* KSViewController.h */,
 				FB477F9C19544FF9007D83E0 /* KSViewController.m */,
-				FB15A527190953DD00C307DD /* TendersViewController */,
-				FB15A528190953F600C307DD /* NewTenderViewController */,
 				CEC54DA7194C91930016758D /* SubscribesViewController */,
-				FB15A5291909540E00C307DD /* AccountViewController */,
-				FBA0158E190EA74900C2CA63 /* OfferViewController */,
-				CE3A1F24190D5BEE00E13870 /* DetailsViewController */,
 				FB15A5291909540E00C307DD /* AccountViewController */,
 				FB15A528190953F600C307DD /* NewTenderViewController */,
 				FBA0158E190EA74900C2CA63 /* OfferViewController */,
@@ -618,6 +618,7 @@
 				FB477F9D19544FF9007D83E0 /* KSViewController.m in Sources */,
 				FB15A53D1909575B00C307DD /* NetworkStatusHelper.m in Sources */,
 				FB6B981E19190DDF00BF2E73 /* Reachability.m in Sources */,
+				CE620A7E19E15AEE00C57953 /* KSCarModel.m in Sources */,
 				CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */,
 				FB15A53C1909575B00C307DD /* DownloadHelper.m in Sources */,
 				CEC54DAA194C91DD0016758D /* KSSubscribesViewController.m in Sources */,

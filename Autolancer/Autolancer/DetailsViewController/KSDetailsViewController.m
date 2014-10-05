@@ -53,10 +53,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   self.navigationItem.title = @"Подробная информация";
+    self.navigationItem.title = @"Подробная информация";
     
-    [_scrollView setScrollEnabled:YES];
     [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+    [_scrollView setScrollEnabled:YES];    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
        	

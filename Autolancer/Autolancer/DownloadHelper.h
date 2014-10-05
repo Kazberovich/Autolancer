@@ -46,6 +46,11 @@
 
 #define cstMethodCarmarks @"get_carmarks"
 
+//carmodels
+//http://autolancer.by/wp-admin/admin-ajax.php?action=get_models&uid=rrrr&user_id=3&carmark_id=622
+#define cstMethodCarmodels @"get_models"
+#define cstCarmarkID @"carmark_id="
+
 @interface DownloadHelper : NSObject
 
 @property (nonatomic, retain) NSString *movieId;
@@ -64,5 +69,6 @@
 + (NSString *)getCategoriesForTendertypeID:(NSString *)tenderTypeID andUUID:(NSString *)uuid withUserID:(NSString *)userID;
 + (NSString *)getRegionsURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
 + (NSString *)getCarmarksURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
++ (NSString *)getCarModelsURLForCarmarkID:(NSString *)carmarkID  andUUID:(NSString *)uuid andUserID:(NSString *)userID;
 
 @end
