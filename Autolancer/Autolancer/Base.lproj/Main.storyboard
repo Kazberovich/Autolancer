@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vhf-ny-xPT">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -782,24 +783,24 @@
                                                     <action selector="buttonClicked:" destination="JMQ-vL-GgO" eventType="touchUpInside" id="fZU-U4-h3O"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" editable="NO" id="xca-Df-t8L" userLabel="Type">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="xca-Df-t8L" userLabel="Type">
                                                 <rect key="frame" x="20" y="46" width="280" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" editable="NO" id="tgw-6V-7ow" userLabel="Place">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="tgw-6V-7ow" userLabel="Place">
                                                 <rect key="frame" x="20" y="176" width="280" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" editable="NO" id="dpQ-OS-kHK" userLabel="Category">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="dpQ-OS-kHK" userLabel="Category">
                                                 <rect key="frame" x="20" y="111" width="280" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -833,17 +834,10 @@
                                                     <action selector="buttonClicked:" destination="JMQ-vL-GgO" eventType="touchUpInside" id="F3w-f8-YJO"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HBp-0h-QmX" userLabel="CarMark">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="HBp-0h-QmX" userLabel="CarMark">
                                                 <rect key="frame" x="20" y="238" width="280" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Lcf-a9-OWe" userLabel="CarModel">
-                                                <rect key="frame" x="20" y="305" width="280" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -906,6 +900,13 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="color" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="Lcf-a9-OWe" userLabel="CarModel">
+                                                <rect key="frame" x="20" y="305" width="280" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.85319808900000005" green="0.91610170140000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -926,7 +927,6 @@
                         <outlet property="image" destination="Zfq-3f-H52" id="1wa-xh-4EC"/>
                         <outlet property="indicator" destination="fla-Bb-P1q" id="JWP-Kg-L2J"/>
                         <outlet property="placeTextView" destination="tgw-6V-7ow" id="hXb-pv-LVQ"/>
-                        <outlet property="scrollView" destination="9D8-MC-VJs" id="os0-fV-xjB"/>
                         <outlet property="selectCatrgory" destination="s0f-xD-Kij" id="Rfv-w1-TOe"/>
                         <outlet property="selectPlace" destination="8BH-Im-60x" id="YB4-YH-oWk"/>
                         <outlet property="selectTenderType" destination="S1V-Yw-Uwo" id="glH-XT-k2f"/>

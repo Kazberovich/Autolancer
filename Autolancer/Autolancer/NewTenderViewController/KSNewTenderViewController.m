@@ -93,8 +93,8 @@
 {
     self.tabBarController.title = @"Новый заказ";
     
-    [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - self.tabBarController.tabBar.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
-    [_scrollView setScrollEnabled:YES];
+   // [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - self.tabBarController.tabBar.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    //[_scrollView setScrollEnabled:YES];
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
     doneItem.image = [UIImage imageNamed:@"apply.png"];
@@ -334,7 +334,7 @@
             self.selectedIndexesForTypes = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.typeTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                self.typeTextView.text = [self.typeTextView.text stringByAppendingFormat:@"%@\n", [[self list:0] objectAtIndex:idx]];
+                self.typeTextView.text = [self.typeTextView.text stringByAppendingFormat:@" - %@\n", [[self list:0] objectAtIndex:idx]];
             }];
             
             break;
@@ -344,7 +344,7 @@
             self.selectedIndexesForCategories = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.categoryTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                self.categoryTextView.text = [self.categoryTextView.text stringByAppendingFormat:@"%@\n", [[self list:1] objectAtIndex:idx]];
+                self.categoryTextView.text = [self.categoryTextView.text stringByAppendingFormat:@" - %@\n", [[self list:1] objectAtIndex:idx]];
             }];
             
             break;
