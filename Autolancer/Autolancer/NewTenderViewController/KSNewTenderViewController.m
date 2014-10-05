@@ -61,6 +61,7 @@
 @synthesize selectedTenderTypeID = _selectedTenderTypeID;
 @synthesize selectedCarmarkID = _selectedCarmarkID;
 @synthesize indicator = _indicator;
+@synthesize description = _description;
 
 - (void)dealloc
 {
@@ -70,6 +71,7 @@
     selectedIndexesForModels = nil;
     selectedIndexesForCarmarks = nil;
     
+    [_description release];
     [_selectedTenderTypeID release];
     [_selectedCarmarkID release];
     [_indicator release];
@@ -92,6 +94,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     self.tabBarController.title = @"Новый заказ";
+    CGRect frameRect = _description.frame;
+    frameRect.size.height = 50;
+    _description.frame = frameRect;
     
    // [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - self.tabBarController.tabBar.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
     //[_scrollView setScrollEnabled:YES];
@@ -355,7 +360,7 @@
             self.selectedIndexesForPlaces = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.placeTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                self.placeTextView.text = [self.placeTextView.text stringByAppendingFormat:@"%@\n", [[self list:2] objectAtIndex:idx]];
+                self.placeTextView.text = [self.placeTextView.text stringByAppendingFormat:@" - %@\n", [[self list:2] objectAtIndex:idx]];
             }];
             
             break;
@@ -365,7 +370,7 @@
             self.selectedIndexesForCarmarks = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.carmarkTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                self.carmarkTextView.text = [self.carmarkTextView.text stringByAppendingFormat:@"%@\n", [[self list:3] objectAtIndex:idx]];
+                self.carmarkTextView.text = [self.carmarkTextView.text stringByAppendingFormat:@" - %@\n", [[self list:3] objectAtIndex:idx]];
             }];
             
             break;
@@ -375,7 +380,7 @@
             self.selectedIndexesForModels = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.carmodelTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                self.carmodelTextView.text = [self.carmodelTextView.text stringByAppendingFormat:@"%@\n", [[self list:4] objectAtIndex:idx]];
+                self.carmodelTextView.text = [self.carmodelTextView.text stringByAppendingFormat:@" - %@\n", [[self list:4] objectAtIndex:idx]];
             }];
             
             break;

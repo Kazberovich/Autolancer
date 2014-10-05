@@ -702,20 +702,21 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrI-zv-as1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ao-fU-UDo">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2Ao-fU-UDo">
                                                 <rect key="frame" x="20" y="371" width="280" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Подробности:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA3-UY-IhQ">
-                                                <rect key="frame" x="20" y="342" width="113" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6. Подробности:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA3-UY-IhQ">
+                                                <rect key="frame" x="20" y="342" width="280" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-Yw-Uwo">
                                                 <rect key="frame" x="20" y="18" width="250" height="25"/>
                                                 <state key="normal" title="1. Тип заказа">
+                                                    <color key="titleColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -725,6 +726,7 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0f-xD-Kij">
                                                 <rect key="frame" x="20" y="79" width="250" height="25"/>
                                                 <state key="normal" title="2. Категории">
+                                                    <color key="titleColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -733,25 +735,29 @@
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xca-Df-t8L" userLabel="Type">
                                                 <rect key="frame" x="20" y="46" width="280" height="25"/>
-                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" red="0.81740608675751691" green="0.87785817485663653" blue="0.96244480298913038" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgw-6V-7ow" userLabel="Place">
                                                 <rect key="frame" x="20" y="176" width="280" height="25"/>
-                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" red="0.81740608680000004" green="0.87785817489999995" blue="0.96244480300000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpQ-OS-kHK" userLabel="Category">
                                                 <rect key="frame" x="20" y="111" width="280" height="25"/>
-                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" red="0.81740608680000004" green="0.87785817489999995" blue="0.96244480300000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BH-Im-60x">
                                                 <rect key="frame" x="20" y="143" width="250" height="25"/>
                                                 <state key="normal" title="3. Местоположение">
+                                                    <color key="titleColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -760,6 +766,7 @@
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHt-1G-fGY">
                                                 <rect key="frame" x="278" y="145" width="22" height="22"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -770,6 +777,7 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTt-ky-1M2">
                                                 <rect key="frame" x="20" y="204" width="250" height="30"/>
                                                 <state key="normal" title="4. Марка авто">
+                                                    <color key="titleColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -778,13 +786,22 @@
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-0h-QmX" userLabel="CarMark">
                                                 <rect key="frame" x="20" y="238" width="280" height="25"/>
-                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" red="0.81740608680000004" green="0.87785817489999995" blue="0.96244480300000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-a9-OWe" userLabel="CarModel">
+                                                <rect key="frame" x="20" y="305" width="280" height="25"/>
+                                                <color key="backgroundColor" red="0.81740608680000004" green="0.87785817489999995" blue="0.96244480300000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZm-CW-CuI">
                                                 <rect key="frame" x="20" y="271" width="254" height="30"/>
                                                 <state key="normal" title="5. Модель авто">
+                                                    <color key="titleColor" red="0.30372275580000002" green="0.41144250869999999" blue="0.65979534650000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -793,6 +810,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj4-S9-Kdo" userLabel="Type">
                                                 <rect key="frame" x="278" y="20" width="22" height="22"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -802,6 +820,7 @@
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-k5-Ipw" userLabel="Category">
                                                 <rect key="frame" x="278" y="81" width="22" height="22"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -811,6 +830,7 @@
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCs-kC-cSD" userLabel="CarMark">
                                                 <rect key="frame" x="278" y="208" width="22" height="22"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -820,6 +840,7 @@
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha9-nc-jPL" userLabel="CarModel">
                                                 <rect key="frame" x="278" y="275" width="22" height="22"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -828,21 +849,15 @@
                                                     <action selector="buttonClicked:" destination="JMQ-vL-GgO" eventType="touchDragInside" id="lot-hn-W2S"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-3f-H52">
-                                                <rect key="frame" x="51" y="409" width="228" height="108"/>
-                                            </imageView>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fla-Bb-P1q">
                                                 <rect key="frame" x="142" y="229" width="37" height="37"/>
                                                 <color key="color" red="0.20000000000000001" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-a9-OWe" userLabel="CarModel">
-                                                <rect key="frame" x="20" y="305" width="280" height="25"/>
-                                                <color key="backgroundColor" red="0.76945408630000001" green="0.87444401510000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-3f-H52">
+                                                <rect key="frame" x="54" y="427" width="212" height="125"/>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.85319808900000005" green="0.91610170140000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.90209173387096775" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="568" id="Aec-te-e4U"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Eqp-H1-Agc"/>
@@ -863,7 +878,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.85319808900000005" green="0.91610170140000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9D8-MC-VJs" firstAttribute="leading" secondItem="ODk-Ra-LRx" secondAttribute="leadingMargin" constant="-16" id="5Xn-GD-oOB"/>
                             <constraint firstItem="9D8-MC-VJs" firstAttribute="top" secondItem="Cx1-Cc-rxX" secondAttribute="bottom" id="9RT-9k-ck9"/>
@@ -884,6 +899,7 @@
                         <outlet property="carmarkTextView" destination="HBp-0h-QmX" id="F9w-ic-Rd7"/>
                         <outlet property="carmodelTextView" destination="Lcf-a9-OWe" id="7Rl-sv-5mQ"/>
                         <outlet property="categoryTextView" destination="dpQ-OS-kHK" id="vRR-7O-sqG"/>
+                        <outlet property="description" destination="2Ao-fU-UDo" id="ynC-3a-8bt"/>
                         <outlet property="image" destination="Zfq-3f-H52" id="1wa-xh-4EC"/>
                         <outlet property="indicator" destination="fla-Bb-P1q" id="JWP-Kg-L2J"/>
                         <outlet property="placeTextView" destination="tgw-6V-7ow" id="hXb-pv-LVQ"/>

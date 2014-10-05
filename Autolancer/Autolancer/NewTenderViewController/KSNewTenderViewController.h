@@ -24,7 +24,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *placeTextView;
 @property (nonatomic, retain) IBOutlet UITextView *carmarkTextView;
 @property (nonatomic, retain) IBOutlet UITextView *carmodelTextView;
-
+@property (nonatomic, retain) IBOutlet UITextField *description;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
 
 - (IBAction)buttonClicked:(id)selector;
