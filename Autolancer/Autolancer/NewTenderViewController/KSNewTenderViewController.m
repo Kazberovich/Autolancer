@@ -39,6 +39,9 @@
 
 @property (nonatomic, retain) NSString *selectedTenderTypeID;
 @property (nonatomic, retain) NSString *selectedCarmarkID;
+@property (nonatomic, retain) NSString *selectedCategoryID;
+@property (nonatomic, retain) NSString *selectedModelID;
+@property (nonatomic, retain) NSString *selectedPlaceID;
 
 @property (assign) NSInteger currentTag;
 
@@ -51,30 +54,39 @@
 @synthesize selectCatrgory = _selectCatrgory;
 @synthesize selectPlace = _selectPlace;
 @synthesize loadedTypes = _loadedTypes;
-@synthesize selectedIndexesForCategories;
-@synthesize selectedIndexesForPlaces;
-@synthesize selectedIndexesForTypes;
-@synthesize selectedIndexesForCarmarks;
-@synthesize selectedIndexesForModels;
+@synthesize selectedIndexesForCategories = _selectedIndexesForCategories;
+@synthesize selectedIndexesForPlaces = _selectedIndexesForPlaces;
+@synthesize selectedIndexesForTypes = _selectedIndexesForTypes;
+@synthesize selectedIndexesForCarmarks = _selectedIndexesForCarmarks;
+@synthesize selectedIndexesForModels = _selectedIndexesForModels;
 @synthesize image = _image;
 @synthesize loadedTypesArray = _loadedTypesArray;
 @synthesize selectedTenderTypeID = _selectedTenderTypeID;
 @synthesize selectedCarmarkID = _selectedCarmarkID;
+@synthesize selectedCategoryID = _selectedCategoryID;
+@synthesize selectedModelID = _selectedModelID;
+@synthesize selectedPlaceID = _selectedPlaceID;
 @synthesize indicator = _indicator;
 @synthesize description = _description;
 
+#pragma mark - Methods
+
 - (void)dealloc
 {
-    selectedIndexesForCategories = nil;
-    selectedIndexesForPlaces = nil;
-    selectedIndexesForTypes = nil;
-    selectedIndexesForModels = nil;
-    selectedIndexesForCarmarks = nil;
+    [_selectedIndexesForCategories release];
+    [_selectedIndexesForPlaces release];
+    [_selectedIndexesForTypes release];
+    [_selectedIndexesForModels release];
+    [_selectedIndexesForCarmarks release];
     
-    [_description release];
     [_selectedTenderTypeID release];
     [_selectedCarmarkID release];
+    [_selectedModelID release];
+    [_selectedCategoryID release];
+    [_selectedPlaceID release];
+    
     [_indicator release];
+    [_description release];
     [_image release];
     [_scrollView release];
     [_selectTenderType release];
@@ -124,6 +136,9 @@
 - (void)actionDone
 {
     NSLog(@"actionDone");
+
+    
+    
 }
 
 #pragma mark - Button
@@ -163,7 +178,7 @@
                 }
                 [_loadedTypes retain];
                 
-                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForTypes point:point size:size multipleSelection:NO];
+                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:_selectedIndexesForTypes point:point size:size multipleSelection:NO];
                 listView.delegate = self;
                 [_indicator stopAnimating];
                 
@@ -190,7 +205,7 @@
                 }
                 [_loadedCategories retain];
                 
-                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCategories point:point size:size multipleSelection:YES];
+                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:_selectedIndexesForCategories point:point size:size multipleSelection:NO];
                 listView.delegate = self;
                 [_indicator stopAnimating];
                 [listView showInView:self.navigationController.view animated:YES];
@@ -220,7 +235,7 @@
                                          }
                                          [_loadedPlaces retain];
                                          
-                                         LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForPlaces point:point size:size multipleSelection:YES];
+                                         LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:_selectedIndexesForPlaces point:point size:size multipleSelection:NO];
                                          listView.delegate = self;
                                          [_indicator stopAnimating];
                                          [listView showInView:self.navigationController.view animated:YES];
@@ -249,7 +264,7 @@
                 }
                 [_loadedCarmarks retain];
                 
-                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForCarmarks point:point size:size multipleSelection:NO];
+                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:_selectedIndexesForCarmarks point:point size:size multipleSelection:NO];
                 listView.delegate = self;
                 [_indicator stopAnimating];
                 [listView showInView:self.navigationController.view animated:YES];
@@ -278,7 +293,7 @@
                 }
                 [_loadedModels retain];
                 
-                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:self.selectedIndexesForModels point:point size:size multipleSelection:NO];
+                LPPopupListView *listView = [[LPPopupListView alloc] initWithTitle:listTitle list:[self list:[selector tag]] selectedIndexes:_selectedIndexesForModels point:point size:size multipleSelection:NO];
                 listView.delegate = self;
                 [_indicator stopAnimating];
                 [listView showInView:self.navigationController.view animated:YES];
@@ -301,10 +316,33 @@
         {
             _selectedTenderTypeID = ((KSTenderType*)[_loadedTypes objectAtIndex:index]).ID;
             _typeTextView.text = @"";
-            self.typeTextView.text = [self.typeTextView.text stringByAppendingFormat:@" - %@\n", [[self list:0] objectAtIndex:index]];
-            self.categoryTextView.text = @"";
-            self.selectedIndexesForCategories = nil;
+            _typeTextView.text = [_typeTextView.text stringByAppendingFormat:@" - %@\n", [[self list:0] objectAtIndex:index]];
+            _categoryTextView.text = @"";
+            
+            [_selectedIndexesForTypes release];
+            _selectedIndexesForTypes = [[NSMutableIndexSet alloc] initWithIndex:index];
+            _selectedIndexesForCategories = nil;
 
+            break;
+        }
+        case 1:
+        {
+            _selectedCategoryID = ((KSTenderCategory *)[_loadedCategories objectAtIndex:index]).ID;
+            _categoryTextView.text = @"";
+            
+            _categoryTextView.text = [_categoryTextView.text stringByAppendingFormat:@" - %@\n", [[self list:1] objectAtIndex:index]];
+            _selectedIndexesForCategories = [[NSMutableIndexSet alloc]initWithIndex:index];
+            
+            break;
+        }
+        case 2:
+        {
+            _selectedPlaceID = ((KSTenderPlace *)[_loadedPlaces objectAtIndex:index]).ID;
+            _placeTextView.text = @"";
+            
+            _placeTextView.text = [_placeTextView.text stringByAppendingFormat:@" - %@\n", [[self list:2] objectAtIndex:index]];
+            _selectedIndexesForPlaces = [[NSMutableIndexSet alloc] initWithIndex:index];
+            
             break;
         }
         case 3:
@@ -313,14 +351,21 @@
             _carmarkTextView.text = @"";
             _carmarkTextView.text = [_carmarkTextView.text stringByAppendingFormat:@" - %@\n", [[self list:3] objectAtIndex:index]];
             _carmodelTextView.text = @"";
-            self.selectedIndexesForModels = nil;
+            
+            [_selectedIndexesForCarmarks release];
+            _selectedIndexesForCarmarks = [[NSMutableIndexSet alloc] initWithIndex:index];
+            _selectedIndexesForModels = nil;
             
             break;
         }
         case 4:
         {
+            _selectedModelID = ((KSCarModel *)[_loadedModels objectAtIndex:index]).ID;
+            
             _carmodelTextView.text = @"";
             _carmodelTextView.text = [_carmodelTextView.text stringByAppendingFormat:@" - %@\n", [[self list:4] objectAtIndex:index]];
+            
+            _selectedIndexesForModels = [[NSMutableIndexSet alloc] initWithIndex:index];
             
             break;
         }
@@ -346,7 +391,7 @@
         }
         case 1:
         {
-            self.selectedIndexesForCategories = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
+            _selectedIndexesForCategories = [[NSMutableIndexSet alloc] initWithIndexSet:selectedIndexes];
             self.categoryTextView.text = @"";
             [selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
                 self.categoryTextView.text = [self.categoryTextView.text stringByAppendingFormat:@" - %@\n", [[self list:1] objectAtIndex:idx]];

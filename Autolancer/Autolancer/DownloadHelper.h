@@ -51,6 +51,9 @@
 #define cstMethodCarmodels @"get_models"
 #define cstCarmarkID @"carmark_id="
 
+//publication
+#define cstMethodTenderSave @"tender_save"
+
 @interface DownloadHelper : NSObject
 
 @property (nonatomic, retain) NSString *movieId;
@@ -70,5 +73,6 @@
 + (NSString *)getRegionsURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
 + (NSString *)getCarmarksURLWithUUID:(NSString *)uuid andUserID:(NSString *)userID;
 + (NSString *)getCarModelsURLForCarmarkID:(NSString *)carmarkID  andUUID:(NSString *)uuid andUserID:(NSString *)userID;
++ (NSString *)getPublicationURL;
 
 @end

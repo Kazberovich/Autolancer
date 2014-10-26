@@ -206,6 +206,10 @@
 		CE6B1ED8190FE965003EA97A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FB15A5361909575B00C307DD /* DownloadHelper.h */,
+				FB15A5371909575B00C307DD /* DownloadHelper.m */,
+				FB15A5381909575B00C307DD /* NetworkStatusHelper.h */,
+				FB15A5391909575B00C307DD /* NetworkStatusHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -380,10 +384,6 @@
 			children = (
 				FB15A5341909575B00C307DD /* ApiLoadService.h */,
 				FB15A5351909575B00C307DD /* ApiLoadService.m */,
-				FB15A5361909575B00C307DD /* DownloadHelper.h */,
-				FB15A5371909575B00C307DD /* DownloadHelper.m */,
-				FB15A5381909575B00C307DD /* NetworkStatusHelper.h */,
-				FB15A5391909575B00C307DD /* NetworkStatusHelper.m */,
 				FB15A53A1909575B00C307DD /* WatchlistHolder.h */,
 			);
 			name = API;

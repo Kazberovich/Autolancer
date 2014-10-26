@@ -72,7 +72,7 @@
         _tenderPlace.text = _tender.place;
     });
     
-    [NSString stringWithFormat:@"%@", @"s"];
+    //[NSString stringWithFormat:@"%@", @"s"];
     
     [ApiLoadService getResponseForURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tender&uuid=rrrr&tender_id=%@&user_id=3" , _tender.ID]] callback:^(NSDictionary *dictionary, NSURL *url) {
         
@@ -88,6 +88,15 @@
         {
             _tenderDescription.text = @"Нет описания";
         }
+    }];
+    
+    [ApiLoadService getResponseForURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://autolancer.by/wp-admin/admin-ajax.php?action=get_offers&tender_id=%@&uid=rrrr&user_id=3" , _tender.ID]] callback:^(NSDictionary *dictionary, NSURL *url) {
+        
+        NSLog(@"%@" , dictionary);
+        
+        NSDictionary *dataDict = [dictionary objectForKey:@"data"];
+        NSDictionary *offers = [dataDict objectForKey:@"offers"];
+
     }];
 }
 

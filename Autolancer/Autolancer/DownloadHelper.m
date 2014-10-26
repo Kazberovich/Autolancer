@@ -97,6 +97,12 @@
     return fullURL;
 }
 
++ (NSString *)getPublicationURL
+{
+    NSString *fullURL = [self append:cstAutolanderBaseURL, cstAutolancerAction, cstMethodTenderSave, nil];
+    return fullURL;
+}
+
 + (NSString *) append:(id) first, ...
 {
     NSString * result = @"";
