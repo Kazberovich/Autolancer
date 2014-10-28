@@ -11,6 +11,7 @@
 #import "KSTender.h"
 #import "KSTenderCell.h"
 #import "KSDetailsViewController.h"
+#import "UIView+KSBoundsCategory.h"
 
 @interface KSTendersViewController ()
 
@@ -35,9 +36,7 @@
 {
     [super viewDidLoad];
     
-   // self.tabBarController.tabBarItem setImage:<#(UIImage *)#>
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     [ApiLoadService getResponseForURL:[NSURL URLWithString:@"http://autolancer.by/wp-admin/admin-ajax.php?action=get_tenders&uuid=rrrr"] callback:^(NSDictionary *dictionary, NSURL *url) {
         
@@ -63,11 +62,11 @@
 {
     self.navigationItem.title = @"Объявления";
     //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1] /*#35699e*/;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
+    //self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
     //self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
     //self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
-    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    //self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
 }
 
 #pragma mark - UITableViewDataSource
@@ -76,6 +75,7 @@
 {
     return [_tendersArray count];
 }
+
             
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -84,18 +84,20 @@
     
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
-
-    cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1];
+    [cell.contentView borderWidth:1.0 borderColor:[UIColor grayColor] radius:15.0];
+    
+    //cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1];
     cell.titleLabel.text = tender.title;
+    [cell.titleLabel borderWidth:1.0 borderColor:[UIColor grayColor] radius:5.0];
     
     cell.carmarkLabel.text = tender.carmark;
-    cell.carmarkLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.carmarkLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     
     cell.carmodelLabel.text = tender.carmodel;
-    cell.carmodelLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.carmodelLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     
     cell.caryearLabel.text = tender.carYear;
-    cell.caryearLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //cell.caryearLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     
     cell.typeLabel.text = tender.type;
     
@@ -113,7 +115,7 @@
     cell.placeLabel.text = tender.place;
     
     cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
-    cell.viewOfferLabel.textColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    //cell.viewOfferLabel.textColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
     [cell.viewOfferLabel sizeToFit];
     

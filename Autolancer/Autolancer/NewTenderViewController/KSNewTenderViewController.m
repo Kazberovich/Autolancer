@@ -14,6 +14,7 @@
 #import "KSTenderPlace.h"
 #import "KSCarmark.h"
 #import "KSCarModel.h"
+#import "UIView+KSBoundsCategory.h"
 
 
 @interface KSNewTenderViewController ()
@@ -68,6 +69,7 @@
 @synthesize selectedPlaceID = _selectedPlaceID;
 @synthesize indicator = _indicator;
 @synthesize description = _description;
+@synthesize tenderTitile = _tenderTitile;
 
 #pragma mark - Methods
 
@@ -87,6 +89,7 @@
     
     [_indicator release];
     [_description release];
+    [_tenderTitile release];
     [_image release];
     [_scrollView release];
     [_selectTenderType release];
@@ -105,14 +108,22 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+
     self.navigationItem.title = @"Новый заказ";
-    //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1]; /*#35699e*/;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     CGRect frameRect = _description.frame;
     frameRect.size.height = 50;
     _description.frame = frameRect;
+    
+    CGFloat borderWidth = 1.0;
+    [_description borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+    [_typeTextView borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+    [_categoryTextView borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+    [_carmarkTextView borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+    [_carmodelTextView borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+    [_placeTextView borderWidth:borderWidth borderColor:[UIColor grayColor] radius:5.0];
+
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
     doneItem.image = [UIImage imageNamed:@"apply.png"];
@@ -141,6 +152,17 @@
 
     
     
+}
+
+- (void)borderedView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color
+{
+    view.layer.borderColor = color.CGColor;
+    view.layer.borderWidth = width;
+    view.layer.cornerRadius = 5;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Button

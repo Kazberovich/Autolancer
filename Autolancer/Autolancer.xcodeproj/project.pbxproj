@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FC4956885854F85AFF7E04B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E49B2B661C456CBF711F22 /* libPods.a */; };
+		CE0EE8991A00283B00A779C7 /* UIView+KSBoundsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0EE8981A00283B00A779C7 /* UIView+KSBoundsCategory.m */; };
 		CE3A1F23190D253500E13870 /* KSTenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F22190D253500E13870 /* KSTenderCell.m */; };
 		CE3A1F2A190D73EC00E13870 /* KSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A1F29190D73EC00E13870 /* KSDetailsViewController.m */; };
 		CE620A7E19E15AEE00C57953 /* KSCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE620A7D19E15AEE00C57953 /* KSCarModel.m */; };
@@ -81,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		24CA36C8152B4224BBFFFF96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CE0EE8971A00283B00A779C7 /* UIView+KSBoundsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+KSBoundsCategory.h"; path = "Helpers/UIView+KSBoundsCategory.h"; sourceTree = "<group>"; };
+		CE0EE8981A00283B00A779C7 /* UIView+KSBoundsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+KSBoundsCategory.m"; path = "Helpers/UIView+KSBoundsCategory.m"; sourceTree = "<group>"; };
 		CE3A1F21190D253500E13870 /* KSTenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTenderCell.h; path = TendersViewController/KSTenderCell.h; sourceTree = "<group>"; };
 		CE3A1F22190D253500E13870 /* KSTenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTenderCell.m; path = TendersViewController/KSTenderCell.m; sourceTree = "<group>"; };
 		CE3A1F28190D73EC00E13870 /* KSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSDetailsViewController.h; path = DetailsViewController/KSDetailsViewController.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				FB15A5371909575B00C307DD /* DownloadHelper.m */,
 				FB15A5381909575B00C307DD /* NetworkStatusHelper.h */,
 				FB15A5391909575B00C307DD /* NetworkStatusHelper.m */,
+				CE0EE8971A00283B00A779C7 /* UIView+KSBoundsCategory.h */,
+				CE0EE8981A00283B00A779C7 /* UIView+KSBoundsCategory.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -636,6 +641,7 @@
 				FBA01591190EA7DD00C2CA63 /* KSOfferViewController.m in Sources */,
 				FB6B981D19190DDF00BF2E73 /* NIDropDown.m in Sources */,
 				FB8290A019D0674600671F56 /* KSTenderCategory.m in Sources */,
+				CE0EE8991A00283B00A779C7 /* UIView+KSBoundsCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
