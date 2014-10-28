@@ -105,21 +105,23 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.tabBarController.title = @"Новый заказ";
+    self.navigationItem.title = @"Новый заказ";
+    //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1]; /*#35699e*/;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    
     CGRect frameRect = _description.frame;
     frameRect.size.height = 50;
     _description.frame = frameRect;
-    
-   // [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - self.tabBarController.tabBar.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
-    //[_scrollView setScrollEnabled:YES];
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleBordered target:self action:@selector(actionDone)];
     doneItem.image = [UIImage imageNamed:@"apply.png"];
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(openCamera)];
     NSArray *actionButtonItems = @[doneItem];
     
-    self.tabBarController.navigationItem.rightBarButtonItems = actionButtonItems;
-    self.tabBarController.navigationItem.leftBarButtonItem = cameraItem;
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    self.navigationItem.leftBarButtonItem = cameraItem;
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -153,8 +155,9 @@
     float paddingLeftRight = 20.0f;
     
     CGPoint point = CGPointMake(paddingLeftRight, (self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + paddingTopBottom);
-    CGSize size = CGSizeMake((self.view.frame.size.width - (paddingLeftRight * 2)), self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height - ((self.navigationController.navigationBar.frame.size.height + paddingTopBottom) + (paddingTopBottom * 2)));
+    CGSize size = CGSizeMake((self.view.frame.size.width - (paddingLeftRight * 2)), self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height/*- ((self.navigationController.navigationBar.frame.size.height + paddingTopBottom) )*/);
     
+    NSLog(@"%f", self.view.window.frame.size.height);
     NSString *listTitle = [[[NSString alloc] init] autorelease];
     
     switch ([selector tag]) {

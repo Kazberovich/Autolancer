@@ -54,6 +54,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Подробная информация";
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    
     
     [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     [_scrollView setScrollEnabled:YES];    

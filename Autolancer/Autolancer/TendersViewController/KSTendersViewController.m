@@ -23,6 +23,7 @@
 @synthesize tendersArray = _tendersArray;
 @synthesize tableView = _tableView;
 
+
 - (void) dealloc
 {
     [_tendersArray release];
@@ -60,12 +61,12 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.tabBarController.title = @"Объявления";
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1] /*#35699e*/;
+    self.navigationItem.title = @"Объявления";
+    //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1] /*#35699e*/;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
+    //self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
-    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
+    //self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
 }
 
