@@ -84,7 +84,7 @@
     
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
-    [cell.contentView borderWidth:1.0 borderColor:[UIColor grayColor] radius:15.0];
+    [cell.contentView borderWidth:1.0 borderColor:[UIColor whiteColor] radius:20.0];
     
     //cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1];
     cell.titleLabel.text = tender.title;
