@@ -10,6 +10,7 @@
 #import "KSTender.h"
 #import "ApiLoadService.h"
 #import "KSOfferViewController.h"
+#import "UIView+KSBoundsCategory.h"
 
 @interface KSDetailsViewController ()
 
@@ -56,9 +57,11 @@
     self.navigationItem.title = @"Подробная информация";
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
+    //[_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+    //[_scrollView setScrollEnabled:YES];
     
-    [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-    [_scrollView setScrollEnabled:YES];    
+    [_tenderTitle borderWidth:1 borderColor:[UIColor grayColor] radius:5];
+    [_tenderDescription borderWidth:1 borderColor:[UIColor grayColor] radius:5];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
        	

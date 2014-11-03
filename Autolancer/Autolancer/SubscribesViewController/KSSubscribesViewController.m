@@ -13,6 +13,7 @@
 #import "KSTenderCategory.h"
 #import "KSTenderPlace.h"
 #import "KSCarmark.h"
+#import "UIView+KSBoundsCategory.h"
 
 @interface KSSubscribesViewController ()
 
@@ -51,6 +52,7 @@
 @synthesize currentTag =_currentTag;
 @synthesize loadedPlaces = _loadedPlaces;
 @synthesize loadedPlacesArray = _loadedPlacesArray;
+@synthesize goToSubscribes = _goToSubscribes;
 
 
 - (void)dealloc
@@ -60,6 +62,7 @@
     self.selectedIndexesForTypes = nil;
     self.selectedIndexesForCarmarks = nil;
 
+    [_goToSubscribes release];
     [_typeTextView release];
     [_scrollView release];
     [_selectTenderType release];
@@ -78,6 +81,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.tabBarController.tabBar.tintColor =  [UIColor colorWithRed:0.227 green:0.624 blue:0.847 alpha:1];
+    
+    [_typeTextView borderWidth:1 borderColor:[UIColor grayColor] radius:5];
+    [_categoryTextView borderWidth:1 borderColor:[UIColor grayColor] radius:5];
+    [_carmarkTextView borderWidth:1 borderColor:[UIColor grayColor] radius:5];
+    [_placeTextView borderWidth:1 borderColor:[UIColor grayColor] radius:5];
+    [_goToSubscribes borderWidth:1 borderColor:[UIColor grayColor] radius:5];
     
     [ApiLoadService getResponseForURL:[NSURL URLWithString:[DownloadHelper getTenderTypesURLWithUUID:@"rrr" andUserID:@"3"]]
                              callback:^(NSDictionary *dictionary, NSURL *url) {
@@ -140,7 +152,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.tabBarController.title = @"Подписки";
+    self.navigationItem.title = @"Подписки";
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -148,6 +160,11 @@
     self.tabBarController.navigationItem.rightBarButtonItems = nil;
     self.tabBarController.navigationItem.leftBarButtonItem = nil;
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 #pragma mark - Button
 

@@ -65,6 +65,7 @@
     //self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1]};
     //self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
     
+    self.tabBarController.tabBar.tintColor =  [UIColor colorWithRed:0.227 green:0.624 blue:0.847 alpha:1]; /*#3a9fd8*/
     //self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
     //self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
 }
@@ -84,21 +85,12 @@
     
     KSTenderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     KSTender *tender = (KSTender *)[_tendersArray objectAtIndex:indexPath.row];
-    [cell.contentView borderWidth:1.0 borderColor:[UIColor whiteColor] radius:20.0];
-    
-    //cell.backgroundColor = [UIColor colorWithRed:0.922 green:0.925 blue:0.933 alpha:1];
+    [cell.contentView borderWidth:1.0 borderColor:[UIColor grayColor] radius:5.0];
     cell.titleLabel.text = tender.title;
     [cell.titleLabel borderWidth:1.0 borderColor:[UIColor grayColor] radius:5.0];
-    
     cell.carmarkLabel.text = tender.carmark;
-    //cell.carmarkLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
-    
     cell.carmodelLabel.text = tender.carmodel;
-    //cell.carmodelLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
-    
     cell.caryearLabel.text = tender.carYear;
-    //cell.caryearLabel.textColor = [UIColor colorWithRed:0.208 green:0.412 blue:0.62 alpha:1];
-    
     cell.typeLabel.text = tender.type;
     
     if ([tender.status isEqualToString:@"1"])
@@ -111,12 +103,8 @@
     }
     
     cell.postDateLabel.text = tender.postDate;
-    
     cell.placeLabel.text = tender.place;
-    
     cell.viewOfferLabel.text = [NSString stringWithFormat:@"%@/%@", tender.views, tender.offers];
-    //cell.viewOfferLabel.textColor = [UIColor colorWithRed:0.847 green:0.847 blue:0.871 alpha:1];
-    
     [cell.viewOfferLabel sizeToFit];
     
     return cell;

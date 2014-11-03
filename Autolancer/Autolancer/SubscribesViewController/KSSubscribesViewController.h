@@ -21,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *categoryTextView;
 @property (nonatomic, retain) IBOutlet UITextView *placeTextView;
 @property (nonatomic, retain) IBOutlet UITextView *carmarkTextView;
+@property (nonatomic, retain) IBOutlet UIButton *goToSubscribes;
 
 - (IBAction)buttonClicked:(id)selector;
 

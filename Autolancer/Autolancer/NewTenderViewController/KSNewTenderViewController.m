@@ -111,7 +111,7 @@
 
     self.navigationItem.title = @"Новый заказ";
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    
+    self.tabBarController.tabBar.tintColor =  [UIColor colorWithRed:0.227 green:0.624 blue:0.847 alpha:1];
     CGRect frameRect = _description.frame;
     frameRect.size.height = 50;
     _description.frame = frameRect;
