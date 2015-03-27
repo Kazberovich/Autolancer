@@ -28,6 +28,7 @@ PODS:
   - FMDB/common (2.0)
   - FMDB/standard (2.0):
     - FMDB/common
+  - FTCoreText (1.0.1)
   - GRMustache (6.8.3):
     - JRSwizzle (~> 1.0)
   - JRSwizzle (1.0)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - BZGFormField
   - DBCamera (~> 2.1.2)
   - DropdownMenu (~> 1.0.0)
+  - FTCoreText
   - LPPopupListView (~> 1.0.3)
   - MapBox
   - REFrostedViewController (~> 2.4.5)
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   DBCamera: 202292ae99033e9e1983b39bca107b9c5bd1c1a4
   DropdownMenu: ad71a2fcb932cc04a4f7c29aadaf2e8ed0c08e42
   FMDB: 51325701b48cc929ff967fa3047ebc893e798a23
+  FTCoreText: 399795cfe9e000435a25be3bef95f02c298528e9
   GRMustache: ab96109b7ba4b9568425bea40d6cd2cdc7582b6c
   JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
   LPPopupListView: 52eaeb26329b22a1040ea9f3c04270a2969ed791
@@ -64,4 +67,4 @@ SPEC CHECKSUMS:
   RNFrostedSidebar: f1d95d9b2627f13cc10e75d36e751a623eec079c
   SMCalloutView: b1c20930f57bc4470f5477979e2decf066397c82
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.34.4

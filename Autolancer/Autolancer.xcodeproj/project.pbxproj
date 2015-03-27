@@ -14,6 +14,7 @@
 		CE620A7E19E15AEE00C57953 /* KSCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE620A7D19E15AEE00C57953 /* KSCarModel.m */; };
 		CE6B1EDA190FF9DB003EA97A /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6B1ED9190FF9DB003EA97A /* user.png */; };
 		CEC54DAA194C91DD0016758D /* KSSubscribesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */; };
+		FB0EB1DB1A38A81F004D80EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0EB1DA1A38A81F004D80EB /* CoreText.framework */; };
 		FB153F2E1962F6AA00A555B1 /* medical32.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F2D1962F6AA00A555B1 /* medical32.png */; };
 		FB153F301962F75300A555B1 /* new_tender.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F2F1962F75300A555B1 /* new_tender.png */; };
 		FB153F321962F81F00A555B1 /* new_tender2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB153F311962F81F00A555B1 /* new_tender2.png */; };
@@ -81,7 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24CA36C8152B4224BBFFFF96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		5D4E3423F2C5EF7B0305844D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5E1C9FE55C9F47A118D846F8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0EE8971A00283B00A779C7 /* UIView+KSBoundsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+KSBoundsCategory.h"; path = "Helpers/UIView+KSBoundsCategory.h"; sourceTree = "<group>"; };
 		CE0EE8981A00283B00A779C7 /* UIView+KSBoundsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+KSBoundsCategory.m"; path = "Helpers/UIView+KSBoundsCategory.m"; sourceTree = "<group>"; };
 		CE3A1F21190D253500E13870 /* KSTenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTenderCell.h; path = TendersViewController/KSTenderCell.h; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		CEC54DA8194C91DD0016758D /* KSSubscribesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSSubscribesViewController.h; path = SubscribesViewController/KSSubscribesViewController.h; sourceTree = "<group>"; };
 		CEC54DA9194C91DD0016758D /* KSSubscribesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSSubscribesViewController.m; path = SubscribesViewController/KSSubscribesViewController.m; sourceTree = "<group>"; };
 		E7E49B2B661C456CBF711F22 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0EB1DA1A38A81F004D80EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		FB153F2D1962F6AA00A555B1 /* medical32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = medical32.png; path = imgs/medical32.png; sourceTree = "<group>"; };
 		FB153F2F1962F75300A555B1 /* new_tender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_tender.png; path = imgs/new_tender.png; sourceTree = "<group>"; };
 		FB153F311962F81F00A555B1 /* new_tender2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_tender2.png; path = imgs/new_tender2.png; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0EB1DB1A38A81F004D80EB /* CoreText.framework in Frameworks */,
 				FB15A4C01909149000C307DD /* CoreGraphics.framework in Frameworks */,
 				FB15A4C21909149000C307DD /* UIKit.framework in Frameworks */,
 				FB15A4BE1909149000C307DD /* Foundation.framework in Frameworks */,
@@ -246,7 +250,7 @@
 				FB15A4BC1909149000C307DD /* Frameworks */,
 				FB15A4BB1909149000C307DD /* Products */,
 				FB15A53E1909579300C307DD /* ThrirdParty */,
-				24CA36C8152B4224BBFFFF96 /* Pods.xcconfig */,
+				FFFCFFD718FD7290D347CB37 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +266,7 @@
 		FB15A4BC1909149000C307DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB0EB1DA1A38A81F004D80EB /* CoreText.framework */,
 				FB15A4BD1909149000C307DD /* Foundation.framework */,
 				FB15A4BF1909149000C307DD /* CoreGraphics.framework */,
 				FB15A4C11909149000C307DD /* UIKit.framework */,
@@ -460,6 +465,15 @@
 			name = OfferViewController;
 			sourceTree = "<group>";
 		};
+		FFFCFFD718FD7290D347CB37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E1C9FE55C9F47A118D846F8 /* Pods.debug.xcconfig */,
+				5D4E3423F2C5EF7B0305844D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,7 +607,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D73A3F64DC66466CA1DBF98C /* Check Pods Manifest.lock */ = {
@@ -765,7 +779,7 @@
 		};
 		FB15A4ED1909149000C307DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24CA36C8152B4224BBFFFF96 /* Pods.xcconfig */;
+			baseConfigurationReference = 5E1C9FE55C9F47A118D846F8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -781,7 +795,7 @@
 		};
 		FB15A4EE1909149000C307DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24CA36C8152B4224BBFFFF96 /* Pods.xcconfig */;
+			baseConfigurationReference = 5D4E3423F2C5EF7B0305844D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

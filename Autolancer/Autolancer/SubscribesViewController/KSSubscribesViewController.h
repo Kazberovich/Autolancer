@@ -10,7 +10,9 @@
 #import <LPPopupListView/LPPopupListView.h>
 #import <LPPopupListViewCell.h>
 
-@interface KSSubscribesViewController : UIViewController<LPPopupListViewDelegate>
+@protocol FTCoreTextViewDelegate;
+
+@interface KSSubscribesViewController : UIViewController<LPPopupListViewDelegate,FTCoreTextViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
