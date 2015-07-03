@@ -14,6 +14,7 @@
 #import "KSTenderPlace.h"
 #import "KSCarmark.h"
 #import "UIView+KSBoundsCategory.h"
+#import <FTCoreText/FTCoreTextView.h>
 
 @interface KSSubscribesViewController ()
 
@@ -148,6 +149,18 @@
                                  }
                                  [_loadedCarmarks retain];
                              }];
+    
+    FTCoreTextView *tv = [[FTCoreTextView alloc] initWithFrame:self.view.frame];
+    [tv setText:@"<_link>www.jove.com|link - NAME JOVE</_link>"];
+    
+   
+    [self.view addSubview:tv];
+    tv.delegate = self;
+}
+
+- (void)coreTextView:(FTCoreTextView *)coreTextView receivedTouchOnData:(NSDictionary *)data
+{
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
