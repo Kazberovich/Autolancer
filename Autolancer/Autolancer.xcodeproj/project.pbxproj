@@ -44,7 +44,6 @@
 		FB3A452A1913E559006E1F97 /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A45291913E559006E1F97 /* at.png */; };
 		FB3A452C1913E664006E1F97 /* at_red.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3A452B1913E664006E1F97 /* at_red.png */; };
 		FB4414D219D1D8460072E862 /* KSCarmark.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4414D119D1D8460072E862 /* KSCarmark.m */; };
-		FB477F9D19544FF9007D83E0 /* KSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB477F9C19544FF9007D83E0 /* KSViewController.m */; };
 		FB477F9F19547006007D83E0 /* kmenuedit.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477F9E19547006007D83E0 /* kmenuedit.png */; };
 		FB477FA119547095007D83E0 /* ui_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477FA019547095007D83E0 /* ui_menu.png */; };
 		FB477FA319547120007D83E0 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FB477FA219547120007D83E0 /* menu.png */; };
@@ -138,8 +137,6 @@
 		FB3A452B1913E664006E1F97 /* at_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at_red.png; path = imgs/at_red.png; sourceTree = "<group>"; };
 		FB4414D019D1D8460072E862 /* KSCarmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCarmark.h; sourceTree = "<group>"; };
 		FB4414D119D1D8460072E862 /* KSCarmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCarmark.m; sourceTree = "<group>"; };
-		FB477F9B19544FF9007D83E0 /* KSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSViewController.h; sourceTree = "<group>"; };
-		FB477F9C19544FF9007D83E0 /* KSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSViewController.m; sourceTree = "<group>"; };
 		FB477F9E19547006007D83E0 /* kmenuedit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kmenuedit.png; path = imgs/kmenuedit.png; sourceTree = "<group>"; };
 		FB477FA019547095007D83E0 /* ui_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ui_menu.png; path = imgs/ui_menu.png; sourceTree = "<group>"; };
 		FB477FA219547120007D83E0 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = imgs/menu.png; sourceTree = "<group>"; };
@@ -438,8 +435,6 @@
 		FB31A2741951B09800995DFA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB477F9B19544FF9007D83E0 /* KSViewController.h */,
-				FB477F9C19544FF9007D83E0 /* KSViewController.m */,
 				CEC54DA7194C91930016758D /* SubscribesViewController */,
 				FB15A5291909540E00C307DD /* AccountViewController */,
 				FB15A528190953F600C307DD /* NewTenderViewController */,
@@ -620,7 +615,6 @@
 			files = (
 				FB15A53B1909575B00C307DD /* ApiLoadService.m in Sources */,
 				FB15A4CE1909149000C307DD /* KSAppDelegate.m in Sources */,
-				FB477F9D19544FF9007D83E0 /* KSViewController.m in Sources */,
 				FB15A53D1909575B00C307DD /* NetworkStatusHelper.m in Sources */,
 				FB6B981E19190DDF00BF2E73 /* Reachability.m in Sources */,
 				CE620A7E19E15AEE00C57953 /* KSCarModel.m in Sources */,
